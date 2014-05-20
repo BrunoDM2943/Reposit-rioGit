@@ -15,6 +15,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
 import com.framework.SistemaArquivos;
+import com.tia.view.cadastros.CadastrarAulaWindow;
 import com.tia.view.cadastros.CadastrarCurso;
 import com.tia.view.cadastros.CadastrarDisciplinaWindow;
 import com.tia.view.cadastros.CadastrarProfessor;
@@ -90,6 +91,16 @@ public class Menu {
 
 	    }
 	});
+	
+	JMenuItem mntmAula = new JMenuItem("Aula");
+	mntmAula.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+			CadastrarAulaWindow aula = new CadastrarAulaWindow();
+			aula.setVisible(true);
+			desktopPane.add(aula);
+		}
+	});
+	mnCadastrar.add(mntmAula);
 	mnCadastrar.add(mntmProfessor);
 
 	JMenuItem mntmCurso = new JMenuItem("Curso");
@@ -126,6 +137,7 @@ public class Menu {
 	mntmStatus.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			CadastroStatusWindow statusWindow = new CadastroStatusWindow();
+			statusWindow.setVisible(true);
 		}
 	});
 	mnCadastrar.add(mntmStatus);

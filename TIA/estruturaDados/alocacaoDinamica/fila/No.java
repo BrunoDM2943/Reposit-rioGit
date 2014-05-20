@@ -1,12 +1,12 @@
 package alocacaoDinamica.fila;
 
 
-public class No {
+public class No<T> {
 	
-	public Object dado;
-	public No prox;
+	public T dado;
+	public No<T> prox;
 	
-	public No(Object dado) {
+	public No(T dado) {
 		this.dado = dado;
 		prox = null;
 	}

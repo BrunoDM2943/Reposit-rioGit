@@ -61,4 +61,8 @@ public class Status {
 		return getStatus();
 	}
 	
+	public boolean equals(Status status){
+		return this.status.equalsIgnoreCase(status.getStatus());
+	}
+	
 }

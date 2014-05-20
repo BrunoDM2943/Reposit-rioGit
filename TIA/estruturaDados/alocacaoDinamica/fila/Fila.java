@@ -1,9 +1,12 @@
 package alocacaoDinamica.fila;
 
+import java.util.Iterator;
 
-public class Fila {
-	private No inicio;
+
+public class Fila<T> implements Iterable<T> {
+	private No<T> inicio;
 	private final String vazia = "A lista esta vazia";
+	public int size = 0;
 	public Fila() {
 		inicio = null;
 	}
@@ -14,15 +17,17 @@ public class Fila {
 	 * @param e Objeto a ser adicionado
 	 * @since 12/04/2014
 	 */
-	public void add(Object e) {
+	public void add(T e) {
 		if(!isEmpty()) {
-			No aux = inicio;
+			No<T> aux = inicio;
 			while(aux.prox != null) {
 				aux = aux.prox;
 			}
-			aux.prox = new No(e);
+			aux.prox = new No<T>(e);
+			size++;
 		}else {
-			inicio = new No(e);
+			inicio = new No<T>(e);
+			size++;
 		}
 	}
 	
@@ -31,9 +36,10 @@ public class Fila {
 	 * @return Objeto removido
 	 * @since 12/04/2014
 	 */
-	public Object rem() {
-		Object removed = -1;
+	public T rem() {
+		T removed = null;
 		if(!isEmpty()) {
+			size--;
 			removed = inicio.dado;
 			inicio = inicio.prox;			
 		}else {
@@ -47,27 +53,27 @@ public class Fila {
 	 * @return Primeiro elemento ou -1
 	 * @since 12/04/2014
 	 */
-	public Object getInicio() {
+	public T getInicio() {
 		if(!isEmpty())
 			return inicio.dado;
 		System.err.println(vazia);
-		return -1;
+		return null;
 	}
 	
 	/**
 	 * Retorna o ultimo elemento da fila
 	 * @return Ultimo elemento ou -1
 	 */
-	public Object getFim() {
+	public T getFim() {
 		if(!isEmpty()) {
-			No aux = inicio;
+			No<T> aux = inicio;
 			while(aux.prox != null) {
 				aux = aux.prox;
 			}
 			return aux.dado;
 		}else {
 			System.err.println(vazia);
-			return -1;
+			return null;
 		}
 	}
 	
@@ -77,7 +83,7 @@ public class Fila {
 	 */
 	public void show() {
 		if(!isEmpty()) {
-			No aux  = inicio;
+			No<T> aux  = inicio;
 			while(aux != null) {
 				System.out.println(aux.dado);
 				aux = aux.prox;
@@ -97,6 +103,13 @@ public class Fila {
 		if(inicio == null)
 			return true;
 		return false;
+	}
+
+
+	@Override
+	public Iterator<T> iterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

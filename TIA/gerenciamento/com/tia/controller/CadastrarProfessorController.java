@@ -48,7 +48,8 @@ public class CadastrarProfessorController implements ValidarCadastro {
      * @since 15/05/2014
      * @version 17/05/2014
      */
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public Persistencia persistir(Hashtable<String, Object> parametros) {
 	ProfessorDAO daoProf = new ProfessorDAO();
 	DocenteDAO daoDocente = new DocenteDAO();
@@ -59,7 +60,7 @@ public class CadastrarProfessorController implements ValidarCadastro {
 	Docente docente = new Docente();
 	docente.setIdDocente();
 	docente.setProf(prof);
-	ListaEncadeada<Curso> listaCursos = new ListaEncadeada<Curso>();
+	ListaEncadeada<Curso> listaCursos = new ListaEncadeada<Curso>();	
 	List<Curso> lista = (List<Curso>) parametros.get("cursos"); 
 	for(Curso curso : lista)
 		listaCursos.addFim(curso);

@@ -21,4 +21,7 @@ public enum Turno {
 	return turno;
     }
 
+    public boolean equals(Turno turno){
+    	return this.turno.equalsIgnoreCase(turno.toString());
+    }
 }

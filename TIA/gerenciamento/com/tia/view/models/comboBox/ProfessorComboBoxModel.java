@@ -3,17 +3,40 @@ package com.tia.view.models.comboBox;
 import javax.swing.AbstractListModel;
 import javax.swing.ComboBoxModel;
 
+import alocacaoDinamica.listaEncadeada.ListaEncadeada;
+
+import com.tia.dao.DocenteDAO;
 import com.tia.dao.ProfessorDAO;
+import com.tia.model.Curso;
+import com.tia.model.Docente;
 import com.tia.model.Professor;
 
-@SuppressWarnings("rawtypes")
-public class ProfessorComboBoxModel extends AbstractListModel implements
-	ComboBoxModel {
+public class ProfessorComboBoxModel extends AbstractListModel<Professor> implements	ComboBoxModel<Professor> {
 
     private static final long serialVersionUID = 1L;
     Professor[] professor = carregaProfessores();
 
-    /**
+    public ProfessorComboBoxModel(Curso curso) {
+		DocenteDAO daoDocente = new DocenteDAO();
+		Docente docente = null;
+		ListaEncadeada<Docente> listaDocente = daoDocente.lerTodos();
+		ListaEncadeada<Professor> listaProfessor = new ListaEncadeada<Professor>();
+		ListaEncadeada<Curso> listaCurso;
+		
+		while(listaDocente.hasNext()){
+			docente = listaDocente.next();
+			listaCurso = docente.getCursos();
+			while(listaCurso.hasNext()){
+				if(listaCurso.next().equal(curso))
+					listaProfessor.addFim(docente.getProf());
+			}
+		}
+		
+		professor = (Professor[]) listaProfessor.toArray(Professor.class);
+		
+	}
+
+	/**
      * Popula os comboBox com o nome dos professores
      * 
      * @return Vetor carregado
@@ -28,7 +51,7 @@ public class ProfessorComboBoxModel extends AbstractListModel implements
 
     Professor selection = null;
 
-    public Object getElementAt(int index) {
+    public Professor getElementAt(int index) {
 	return professor[index];
     }
 

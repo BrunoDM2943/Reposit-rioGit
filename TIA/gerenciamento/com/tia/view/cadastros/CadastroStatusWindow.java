@@ -27,20 +27,10 @@ public class CadastroStatusWindow extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private JTextField tfStatus;
 	
-	public static void main(String[] args) {
-		try {
-			CadastroStatusWindow dialog = new CadastroStatusWindow();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
-	/**
-	 * Create the dialog.
-	 */
 	public CadastroStatusWindow() {
+		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		setVisible(true);
 		setBounds(100, 100, 450, 126);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

@@ -7,8 +7,7 @@ import com.tia.dao.SalaDAO;
 import com.tia.model.Sala;
 
 
-@SuppressWarnings("rawtypes")
-public class SalaComboBoxModel extends AbstractListModel implements ComboBoxModel {
+public class SalaComboBoxModel extends AbstractListModel<Sala> implements ComboBoxModel<Sala> {
 	
 	private static final long	serialVersionUID	= 1L;
 	Sala[] sala = carregaStatus();
@@ -28,7 +27,7 @@ public class SalaComboBoxModel extends AbstractListModel implements ComboBoxMode
 	
 	Sala selection = null;
 
-	  public Object getElementAt(int index) {
+	  public Sala getElementAt(int index) {
 	    return sala[index];
 	  }
 

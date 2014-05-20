@@ -46,6 +46,7 @@ public class StatusDAO implements DAO<Status> {
 		ListaEncadeada<Status> lista = new ListaEncadeada<Status>();
 		Status status = null;
 		for (File arquivo : arquivos) {
+			if(!arquivo.getName().equalsIgnoreCase("autoIncremento.txt")){
 			try {
 				reader = new BufferedReader(new FileReader(arquivo));
 				status = new Status();
@@ -62,6 +63,7 @@ public class StatusDAO implements DAO<Status> {
 			} catch (IOException e) {
 				System.err.println(e.getMessage());
 				e.printStackTrace();
+			}
 			}
 		}
 
