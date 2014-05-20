@@ -17,7 +17,7 @@ import com.jgoodies.forms.factories.FormFactory;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.RowSpec;
-import com.tia.controller.CadastrarStatusController;
+import com.tia.controller.cadastro.CadastrarStatusController;
 import com.tia.controller.constantes.Persistencia;
 
 public class CadastroStatusWindow extends JDialog {

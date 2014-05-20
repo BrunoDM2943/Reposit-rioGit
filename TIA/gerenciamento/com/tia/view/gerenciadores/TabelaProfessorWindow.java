@@ -10,7 +10,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SpringLayout;
 
-import com.tia.controller.TabelaProfessorController;
+import com.tia.controller.tabela.TabelaProfessorController;
 import com.tia.model.Professor;
 import com.tia.view.Menu;
 import com.tia.view.cadastros.CadastrarProfessor;

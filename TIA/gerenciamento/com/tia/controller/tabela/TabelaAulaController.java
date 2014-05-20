@@ -1,4 +1,4 @@
-package com.tia.controller;
+package com.tia.controller.tabela;
 
 import java.util.LinkedList;
 

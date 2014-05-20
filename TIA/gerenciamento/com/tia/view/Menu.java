@@ -15,6 +15,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
 import com.framework.SistemaArquivos;
+import com.tia.controller.ferramenta.Restaurar;
 import com.tia.view.cadastros.CadastrarAulaWindow;
 import com.tia.view.cadastros.CadastrarCurso;
 import com.tia.view.cadastros.CadastrarDisciplinaWindow;
@@ -79,6 +80,14 @@ public class Menu {
 
 	JMenu mnNewMenu = new JMenu("Arquivo");
 	menuBar.add(mnNewMenu);
+	
+	JMenuItem mntmFormatarRegistros = new JMenuItem("Formatar registros");
+	mntmFormatarRegistros.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+			Restaurar.main(null);
+		}
+	});
+	mnNewMenu.add(mntmFormatarRegistros);
 
 	JMenu mnCadastrar = new JMenu("Cadastrar");
 	menuBar.add(mnCadastrar);

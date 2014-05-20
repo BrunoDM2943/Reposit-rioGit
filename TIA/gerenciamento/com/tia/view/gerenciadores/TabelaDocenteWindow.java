@@ -9,7 +9,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SpringLayout;
 
-import com.tia.controller.TabelaDocenteController;
+import com.tia.controller.tabela.TabelaDocenteController;
 import com.tia.view.models.table.DocenteTableModel;
 
 public class TabelaDocenteWindow extends JInternalFrame {

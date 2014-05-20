@@ -24,7 +24,7 @@ import com.jgoodies.forms.factories.FormFactory;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.RowSpec;
-import com.tia.controller.CadastrarAulaController;
+import com.tia.controller.cadastro.CadastrarAulaController;
 import com.tia.controller.constantes.Persistencia;
 import com.tia.controller.constantes.Turno;
 import com.tia.model.Curso;

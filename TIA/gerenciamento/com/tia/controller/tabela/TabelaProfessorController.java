@@ -1,4 +1,4 @@
-package com.tia.controller;
+package com.tia.controller.tabela;
 
 import java.util.LinkedList;
 
@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 
 import alocacaoDinamica.listaEncadeada.ListaEncadeada;
 
+import com.tia.controller.cadastro.CadastrarProfessorController;
 import com.tia.controller.constantes.Persistencia;
 import com.tia.dao.ProfessorDAO;
 import com.tia.model.Professor;

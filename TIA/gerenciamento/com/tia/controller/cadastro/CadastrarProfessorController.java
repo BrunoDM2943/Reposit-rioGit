@@ -1,4 +1,4 @@
-package com.tia.controller;
+package com.tia.controller.cadastro;
 
 import java.util.Hashtable;
 import java.util.List;

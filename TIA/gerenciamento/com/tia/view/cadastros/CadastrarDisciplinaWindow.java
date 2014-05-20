@@ -17,7 +17,7 @@ import com.jgoodies.forms.factories.FormFactory;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.RowSpec;
-import com.tia.controller.CadastrarDisciplinaController;
+import com.tia.controller.cadastro.CadastrarDisciplinaController;
 import com.tia.controller.constantes.Persistencia;
 import com.tia.model.Curso;
 import com.tia.view.models.comboBox.CursoComboBoxModel;
