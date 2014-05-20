@@ -113,7 +113,6 @@ public class ProfessorDAO implements DAO<Professor> {
 		try {
 			reader = new BufferedReader(new FileReader(path));
 			prof = new Professor();
-			prof = new Professor();
 			prof.setId(Integer.parseInt(reader.readLine()));
 			prof.setNome(reader.readLine());
 			reader.close();

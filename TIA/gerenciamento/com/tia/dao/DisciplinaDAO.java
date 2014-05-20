@@ -92,7 +92,29 @@ public class DisciplinaDAO implements DAO<Disciplina> {
 
 	@Override
 	public Disciplina buscar(int id) {
-		// TODO Auto-generated method stub
+		String path = Diretorios.DISCIPLINA.getArquivo(id);
+		Disciplina disc = null;
+		BufferedReader reader;
+		try {
+			reader = new BufferedReader(new FileReader(path));
+			disc = new Disciplina();
+			disc.setIdDisciplina(Integer.parseInt(reader.readLine()));
+			disc.setNome(reader.readLine());
+			disc.setIdCurso(Integer.parseInt(reader.readLine()));
+			disc.setNomeCurso(reader.readLine());
+			disc.setSemestre(Integer.parseInt(reader.readLine()));
+			reader.close();
+			return disc;
+		} catch (FileNotFoundException e) {
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+		} catch (NumberFormatException e) {
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+		}
 		return null;
 	}
 

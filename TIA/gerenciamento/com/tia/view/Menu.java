@@ -21,6 +21,7 @@ import com.tia.view.cadastros.CadastrarDisciplinaWindow;
 import com.tia.view.cadastros.CadastrarProfessor;
 import com.tia.view.cadastros.CadastrarSala;
 import com.tia.view.cadastros.CadastroStatusWindow;
+import com.tia.view.gerenciadores.TabelaAulaWindow;
 import com.tia.view.gerenciadores.TabelaCursoWindow;
 import com.tia.view.gerenciadores.TabelaDisciplinaWindow;
 import com.tia.view.gerenciadores.TabelaDocenteWindow;
@@ -166,6 +167,16 @@ public class Menu {
 		    desktopPane.add(tabela);
 		}
 	});
+	
+	JMenuItem mntmAula_1 = new JMenuItem("Aula");
+	mntmAula_1.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+			TabelaAulaWindow aulaTable = new TabelaAulaWindow();
+			aulaTable.setVisible(true);
+			desktopPane.add(aulaTable);
+		}
+	});
+	mnTabelas.add(mntmAula_1);
 	mnTabelas.add(mntmCursos);
 
 	JMenuItem mntmProfessores = new JMenuItem("Professores");

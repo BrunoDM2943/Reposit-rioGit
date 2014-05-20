@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.text.ParseException;
+import java.util.Hashtable;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -23,6 +24,8 @@ import com.jgoodies.forms.factories.FormFactory;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.RowSpec;
+import com.tia.controller.CadastrarAulaController;
+import com.tia.controller.constantes.Persistencia;
 import com.tia.controller.constantes.Turno;
 import com.tia.model.Curso;
 import com.tia.model.Disciplina;
@@ -116,7 +119,7 @@ public class CadastrarAulaWindow extends JInternalFrame {
 		lblDiaDaSemana.setFont(new Font("SansSerif", Font.PLAIN, 17));
 		panel.add(lblDiaDaSemana, "2, 10, right, default");
 		
-		JComboBox<Dia> cbDia = new JComboBox<Dia>();
+		final JComboBox<Dia> cbDia = new JComboBox<Dia>();
 		cbDia.setFont(new Font("SansSerif", Font.PLAIN, 17));
 		cbDia.setModel(new DefaultComboBoxModel<Dia>(Dia.values()));
 		panel.add(cbDia, "4, 10, fill, default");
@@ -125,7 +128,7 @@ public class CadastrarAulaWindow extends JInternalFrame {
 		lblSala.setFont(new Font("SansSerif", Font.PLAIN, 17));
 		panel.add(lblSala, "2, 12, left, default");
 		
-		JComboBox<Sala> cbSala = new JComboBox<Sala>(new SalaComboBoxModel());
+		final JComboBox<Sala> cbSala = new JComboBox<Sala>(new SalaComboBoxModel());
 		cbSala.setFont(new Font("SansSerif", Font.PLAIN, 17));
 		panel.add(cbSala, "4, 12, fill, default");
 		
@@ -174,6 +177,21 @@ public class CadastrarAulaWindow extends JInternalFrame {
 		btnGravar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {				
 				//FIXME HashTable
+				Hashtable<String, Object> parametros = new Hashtable<String, Object>();
+				parametros.put("curso", (Curso)cbCurso.getSelectedItem());
+				parametros.put("disciplina", (Disciplina) cbDisciplina.getSelectedItem());
+				parametros.put("professor", (Professor) cbProfessor.getSelectedItem());
+				parametros.put("turno", (Turno) cbTurno.getSelectedItem());
+				parametros.put("sala", (Sala) cbSala.getSelectedItem());
+				parametros.put("inicio", tfIni.getText());
+				parametros.put("fim", tfFim.getText());
+				parametros.put("dia", cbDia.getSelectedItem());
+				CadastrarAulaController crtl = new CadastrarAulaController();
+				Persistencia response = null;
+				if(crtl.validaEntradas(parametros))
+					response = crtl.persistir(parametros);
+				crtl.validaPersistencia(response);
+				
 				
 				
 			}

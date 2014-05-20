@@ -16,9 +16,13 @@ public enum Turno {
 	this.turno = turno;
     }
     
+    public void setTurno(String turno){
+    	this.turno = turno;
+    }
+    
     @Override
     public String toString() {
-	return turno;
+    	return turno;
     }
 
     public boolean equals(Turno turno){

@@ -102,7 +102,25 @@ public class SalaDAO implements DAO<Sala> {
 
     @Override
     public Sala buscar(int id) {
-	// TODO Auto-generated method stub
+    	BufferedReader reader;
+    	Sala sala = null;
+    	String arquivo = Diretorios.SALA.getArquivo(id);
+    	try {
+		    reader = new BufferedReader(new FileReader(arquivo));
+		    sala = new Sala();
+		    sala.setId_sala(Integer.parseInt(reader.readLine()));
+		    sala.setNome(reader.readLine());
+    		sala.setAndar(Short.parseShort(reader.readLine()));
+		    sala.setEquipamento(Boolean.parseBoolean(reader.readLine()));		    
+		    reader.close();
+		    return sala;
+		} catch (FileNotFoundException e) {
+		    System.err.println(e.getMessage());
+		    e.printStackTrace();
+		} catch (IOException e) {
+		    System.err.println(e.getMessage());
+		    e.printStackTrace();
+		}
 	return null;
     }
 
