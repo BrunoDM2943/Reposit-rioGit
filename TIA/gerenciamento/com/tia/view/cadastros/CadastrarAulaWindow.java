@@ -1,10 +1,11 @@
 package com.tia.view.cadastros;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.text.ParseException;
-import java.util.Hashtable;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -32,9 +33,6 @@ import com.tia.view.models.comboBox.DisciplinaComboBoxModel;
 import com.tia.view.models.comboBox.ProfessorComboBoxModel;
 import com.tia.view.models.comboBox.SalaComboBoxModel;
 import com.tia.view.models.comboBox.TurnoComboBoxModel;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class CadastrarAulaWindow extends JInternalFrame {
 
@@ -176,7 +174,7 @@ public class CadastrarAulaWindow extends JInternalFrame {
 		btnGravar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {				
 				//FIXME HashTable
-				Hashtable<String, Object> parametros = new Hashtable<String, Object>();
+				
 				
 			}
 		});
