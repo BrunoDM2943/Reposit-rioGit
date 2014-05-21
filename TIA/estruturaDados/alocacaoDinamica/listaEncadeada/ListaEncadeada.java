@@ -6,6 +6,7 @@ import com.tia.controller.constantes.Turno;
 import com.tia.model.Curso;
 import com.tia.model.Professor;
 import com.tia.model.Sala;
+import com.tia.model.Status;
 
 
 
@@ -130,6 +131,8 @@ public class ListaEncadeada<T> implements Iterator<T>{
 	    	array = new Curso[tamanho];
 	    if(tipo.getName().equals(Turno.class.getName()))
 	    	array = new Turno[tamanho];
+	    if(tipo.getName().equals(Status.class.getName()))
+	    	array = new Status[tamanho];
 	    for(int i = 0; i < tamanho; i++)
 		array[i] = getElement(i);
 	    

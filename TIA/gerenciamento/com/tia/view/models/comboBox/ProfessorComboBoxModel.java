@@ -14,7 +14,7 @@ import com.tia.model.Professor;
 public class ProfessorComboBoxModel extends AbstractListModel<Professor> implements	ComboBoxModel<Professor> {
 
     private static final long serialVersionUID = 1L;
-    Professor[] professor = carregaProfessores();
+    Professor[] professor;
 
     public ProfessorComboBoxModel(Curso curso) {
 		DocenteDAO daoDocente = new DocenteDAO();
@@ -34,6 +34,10 @@ public class ProfessorComboBoxModel extends AbstractListModel<Professor> impleme
 		
 		professor = (Professor[]) listaProfessor.toArray(Professor.class);
 		
+	}
+
+	public ProfessorComboBoxModel() {
+		professor = carregaProfessores();
 	}
 
 	/**

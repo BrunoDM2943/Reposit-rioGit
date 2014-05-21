@@ -80,7 +80,26 @@ public class StatusDAO implements DAO<Status> {
 
 	@Override
 	public Status buscar(int id) {
-		
+		String path = Diretorios.STATUS.getArquivo(id);
+		Status status = null;
+		BufferedReader reader;
+		try {
+			reader = new BufferedReader(new FileReader(path));
+			status = new Status();
+			status.setId(Integer.parseInt(reader.readLine()));
+			status.setStatus(reader.readLine());
+			reader.close();
+			return status;
+		} catch (FileNotFoundException e) {
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+		} catch (NumberFormatException e) {
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+		}
 		return null;
 	}
 

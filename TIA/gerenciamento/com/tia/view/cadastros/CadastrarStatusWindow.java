@@ -20,7 +20,7 @@ import com.jgoodies.forms.layout.RowSpec;
 import com.tia.controller.cadastro.CadastrarStatusController;
 import com.tia.controller.constantes.Persistencia;
 
-public class CadastroStatusWindow extends JDialog {
+public class CadastrarStatusWindow extends JDialog {
 
 
 	private static final long serialVersionUID = 7569711051282358855L;
@@ -28,7 +28,7 @@ public class CadastroStatusWindow extends JDialog {
 	private JTextField tfStatus;
 	
 
-	public CadastroStatusWindow() {
+	public CadastrarStatusWindow() {
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setVisible(true);
 		setBounds(100, 100, 450, 126);

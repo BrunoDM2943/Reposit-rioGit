@@ -15,17 +15,18 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
 import com.framework.SistemaArquivos;
-import com.tia.controller.ferramenta.Restaurar;
 import com.tia.view.cadastros.CadastrarAulaWindow;
 import com.tia.view.cadastros.CadastrarCurso;
 import com.tia.view.cadastros.CadastrarDisciplinaWindow;
+import com.tia.view.cadastros.CadastrarLocalizacaoWindow;
 import com.tia.view.cadastros.CadastrarProfessor;
 import com.tia.view.cadastros.CadastrarSala;
-import com.tia.view.cadastros.CadastroStatusWindow;
+import com.tia.view.cadastros.CadastrarStatusWindow;
 import com.tia.view.gerenciadores.TabelaAulaWindow;
 import com.tia.view.gerenciadores.TabelaCursoWindow;
 import com.tia.view.gerenciadores.TabelaDisciplinaWindow;
 import com.tia.view.gerenciadores.TabelaDocenteWindow;
+import com.tia.view.gerenciadores.TabelaLocalizacaoWindow;
 import com.tia.view.gerenciadores.TabelaProfessorWindow;
 import com.tia.view.gerenciadores.TabelaSalaWindow;
 
@@ -84,7 +85,7 @@ public class Menu {
 	JMenuItem mntmFormatarRegistros = new JMenuItem("Formatar registros");
 	mntmFormatarRegistros.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			Restaurar.main(null);
+			
 		}
 	});
 	mnNewMenu.add(mntmFormatarRegistros);
@@ -146,7 +147,7 @@ public class Menu {
 	JMenuItem mntmStatus = new JMenuItem("Status");
 	mntmStatus.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-			CadastroStatusWindow statusWindow = new CadastroStatusWindow();
+			CadastrarStatusWindow statusWindow = new CadastrarStatusWindow();
 			statusWindow.setVisible(true);
 		}
 	});
@@ -159,6 +160,9 @@ public class Menu {
 		"Controle de Localizacao");
 	mntmControleDeLocalizacao.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent arg0) {
+	    	CadastrarLocalizacaoWindow window = new CadastrarLocalizacaoWindow();
+	    	window.setVisible(true);
+	    	desktopPane.add(window);
 		
 
 	    }
@@ -216,6 +220,16 @@ public class Menu {
 		}
 	});
 	mnTabelas.add(mntmDocentes);
+	
+	JMenuItem mntmLocalizacao = new JMenuItem("Localizacao");
+	mntmLocalizacao.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+			TabelaLocalizacaoWindow window = new TabelaLocalizacaoWindow();
+			window.setVisible(true);
+			desktopPane.add(window);
+		}
+	});
+	mnTabelas.add(mntmLocalizacao);
 	mnTabelas.add(mntmProfessores);
 	
 	JMenuItem mntmSala_1 = new JMenuItem("Sala");
