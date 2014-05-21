@@ -47,12 +47,9 @@ public class Localizacao {
 		this.idStatus = idStatus;
 	}
 
-
-
 	public Professor getProf() {
 		return prof;
 	}
-
 
 
 	public void setProf(Professor prof) {
@@ -69,5 +66,10 @@ public class Localizacao {
 
 	public void setStatus(Status status) {
 		this.status = status;
+	}
+
+	@Override
+	public String toString(){
+		return prof.getNome() + "-" + status.getStatus();
 	}
 }

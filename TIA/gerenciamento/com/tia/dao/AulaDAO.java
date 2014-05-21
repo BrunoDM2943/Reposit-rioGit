@@ -203,4 +203,44 @@ public class AulaDAO implements DAO<Aula> {
 		return true;
 	}
 
+	public ListaEncadeada<Aula> ler(Dia diaAtual){
+		String path = Diretorios.AULA.toString() + "\\" + diaAtual.toString();
+		File[] arquivos = new File(path).listFiles();
+		Aula aula;
+		FileReader fileReader;
+		BufferedReader reader;
+		ListaEncadeada<Aula> lista = new ListaEncadeada<Aula>();
+		for(File arquivo : arquivos){
+			try{
+				fileReader = new FileReader(arquivo);
+				reader = new BufferedReader(fileReader);
+				aula = new Aula();
+				aula.setIdAula(Integer.parseInt(reader.readLine()));
+				aula.setDisc(discDAO.buscar((Integer.parseInt(reader.readLine()))));
+				aula.setProf(profDAO.buscar(Integer.parseInt(reader.readLine())));
+				aula.setSala(salaDAO.buscar(Integer.parseInt(reader.readLine())));
+				aula.setTurno(Turno.valueOf(reader.readLine()));
+				aula.setDia(Dia.valueOf(reader.readLine()));
+				try {
+					data = formatador.parse(reader.readLine());
+				} catch (ParseException e1) {
+					e1.printStackTrace();
+				}
+				aula.setIni(new Time(data.getTime()));
+				try {
+					data = formatador.parse(reader.readLine());
+				} catch (ParseException e1) {
+					e1.printStackTrace();
+				}
+				aula.setFim(new Time(data.getTime()));
+				lista.addFim(aula);
+				reader.close();
+				fileReader.close();
+			}catch(IOException e){
+				System.err.println(e.getMessage());
+				e.printStackTrace();
+			}
+		}
+		return lista;
+	}
 }

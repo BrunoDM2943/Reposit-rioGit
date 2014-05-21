@@ -15,7 +15,8 @@ public enum Diretorios {
 	DOCENTE(DADOS.getPath() + "\\Docente"),
 	SALA(DADOS.getPath() + "\\Sala"),
 	AULA(DADOS.getPath() + "\\Aula"),
-	DISCIPLINA(DADOS.getPath() + "\\Disciplinas");
+	DISCIPLINA(DADOS.getPath() + "\\Disciplinas"),
+	LAYOUT(DADOS.getPath() + "\\Layout");
 	
 	private String path;
 	

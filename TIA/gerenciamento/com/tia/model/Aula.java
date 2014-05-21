@@ -151,10 +151,9 @@ public class Aula {
 	@Override
 	public String toString(){
 		StringBuilder builder = new StringBuilder();
-		builder.append(disc.getNome() + "\n");
-		builder.append(prof.getNome() + "\n");
-		builder.append(disc.getNomeCurso() + "-" + turno.toString() + "\n");
-		builder.append(sala.getNome());
+		builder.append(prof.getNome() + "<br>");
+		builder.append(disc.getNome()+ "<br>");
+		builder.append(sala.getNome()+ "<br>");
 		return builder.toString();
 	}
 	
