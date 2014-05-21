@@ -1,11 +1,14 @@
 package com.tia.toten.view;
 
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.SpringLayout;
 import javax.swing.border.EmptyBorder;
 
 public class Menu extends JFrame {
@@ -34,16 +37,20 @@ public class Menu extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 759, 451);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		SpringLayout sl_contentPane = new SpringLayout();
-		contentPane.setLayout(sl_contentPane);
+		contentPane.setLayout(null);
 		
 		JButton btnOndeEstaMeu = new JButton("Onde esta meu professor?");
-		sl_contentPane.putConstraint(SpringLayout.NORTH, btnOndeEstaMeu, 15, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.WEST, btnOndeEstaMeu, 5, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnOndeEstaMeu, 58, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, btnOndeEstaMeu, 200, SpringLayout.WEST, contentPane);
+		btnOndeEstaMeu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				LocalizaProfessor localiza = new LocalizaProfessor();
+				localiza.setVisible(true);
+			}
+		});
+		btnOndeEstaMeu.setFont(new Font("SansSerif", Font.PLAIN, 17));
+		btnOndeEstaMeu.setBounds(10, 20, 246, 43);
 		contentPane.add(btnOndeEstaMeu);
 	}
 }

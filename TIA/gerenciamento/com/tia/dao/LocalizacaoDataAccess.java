@@ -6,11 +6,15 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Calendar;
 
 import alocacaoDinamica.listaEncadeada.ListaEncadeada;
 
+import com.framework.Dia;
 import com.framework.Diretorios;
+import com.framework.HtmlGenerator;
 import com.tia.controller.constantes.Persistencia;
+import com.tia.model.Aula;
 import com.tia.model.Localizacao;
 
 public class LocalizacaoDataAccess implements DataAccessObject<Localizacao> {
@@ -113,4 +117,34 @@ public class LocalizacaoDataAccess implements DataAccessObject<Localizacao> {
 		return false;
 	}
 
+	public String geraHtmlLocalizacao(){
+		String html  = "";
+		LocalizacaoDataAccess daoLocalizacao = new LocalizacaoDataAccess();
+		AulaDataAccess daoAula = new AulaDataAccess();
+		ListaEncadeada<Localizacao> listaLocalizacao = new ListaEncadeada<Localizacao>();
+		ListaEncadeada<Aula> listaAula = new ListaEncadeada<Aula>();
+		ListaEncadeada<Object> listaGeral = new ListaEncadeada<Object>();
+		Localizacao localizacao;
+		Aula aula;
+		listaLocalizacao = daoLocalizacao.lerTodos();
+		while(listaLocalizacao.hasNext()){
+			localizacao = listaLocalizacao.next();
+			if(localizacao.getStatus().getStatus().equalsIgnoreCase("Presente")){
+				aula = new Aula();				
+				listaAula = daoAula.ler(Dia.getDia());
+				while(listaAula.hasNext()){
+					aula = listaAula.next();
+					if(aula.getProf().equals(localizacao.getProf()) &&
+							aula.getIni().getTime() > (Calendar.getInstance().getTime().getTime()) && aula.getFim().getTime() < (Calendar.getInstance().getTime().getTime())){
+						listaGeral.addFim(aula);
+					}
+				}
+			}else{
+				listaGeral.addFim(localizacao);
+			}
+		}
+		HtmlGenerator htmlGenerator = new HtmlGenerator();
+		html = htmlGenerator.gerarHtml(listaGeral);		
+		return html;
+	}
 }

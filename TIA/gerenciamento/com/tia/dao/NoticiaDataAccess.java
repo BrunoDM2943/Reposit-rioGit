@@ -152,5 +152,6 @@ public class NoticiaDataAccess implements DataAccessObject<Noticia> {
 		}
 		return true;
 	}
-
+	
+	
 }
