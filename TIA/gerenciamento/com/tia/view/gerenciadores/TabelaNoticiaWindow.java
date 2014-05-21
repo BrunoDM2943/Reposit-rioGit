@@ -10,22 +10,22 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SpringLayout;
 
-import com.tia.controller.tabela.TabelaLocalizacaoController;
-import com.tia.model.Localizacao;
+import com.tia.controller.tabela.TabelaNoticiaController;
+import com.tia.model.Noticia;
 import com.tia.view.Menu;
-import com.tia.view.cadastros.CadastrarLocalizacaoWindow;
-import com.tia.view.models.table.LocalizacaoTableModel;
+import com.tia.view.cadastros.CadastrarNoticiaWindow;
+import com.tia.view.models.table.NoticiaTableModel;
 
-public class TabelaLocalizacaoWindow extends JInternalFrame {
+public class TabelaNoticiaWindow extends JInternalFrame {
     /**
      * 
      */
     private static final long serialVersionUID = -3982072613396606340L;
     private JTable table;
-    private LocalizacaoTableModel model;
-    private TabelaLocalizacaoController crtl = new TabelaLocalizacaoController();
+    private NoticiaTableModel model;
+    private TabelaNoticiaController crtl = new TabelaNoticiaController();
 
-    public TabelaLocalizacaoWindow() {
+    public TabelaNoticiaWindow() {
 	setMaximizable(true);
 	setIconifiable(true);
 	setResizable(true);
@@ -50,37 +50,35 @@ public class TabelaLocalizacaoWindow extends JInternalFrame {
 	table.setModel(model);
 	scrollPane.setViewportView(table);
 
-	JButton btrNovoLocalizacao = new JButton("Novo Localizacao");
-	springLayout.putConstraint(SpringLayout.NORTH, btrNovoLocalizacao, 6,
+	JButton btrNovoNoticia = new JButton("Novo Noticia");
+	springLayout.putConstraint(SpringLayout.NORTH, btrNovoNoticia, 6,
 		SpringLayout.SOUTH, scrollPane);
-	springLayout.putConstraint(SpringLayout.WEST, btrNovoLocalizacao, 10,
+	springLayout.putConstraint(SpringLayout.WEST, btrNovoNoticia, 10,
 		SpringLayout.WEST, scrollPane);
-	btrNovoLocalizacao.addActionListener(new ActionListener() {
+	btrNovoNoticia.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent e) {
-	    	CadastrarLocalizacaoWindow novoLocalizacao = new CadastrarLocalizacaoWindow();
-		novoLocalizacao.setVisible(true);
-		Menu.desktopPane.add(novoLocalizacao);
-		Menu.desktopPane.moveToFront(novoLocalizacao);
+	    	CadastrarNoticiaWindow novoNoticia = new CadastrarNoticiaWindow();
+		novoNoticia.setVisible(true);
+		Menu.desktopPane.add(novoNoticia);
+		Menu.desktopPane.moveToFront(novoNoticia);
 	    }
 	});
-	getContentPane().add(btrNovoLocalizacao);
+	getContentPane().add(btrNovoNoticia);
 
-	JButton btnDeletarLocalizacao = new JButton("Deletar Localizacao");
-	springLayout.putConstraint(SpringLayout.NORTH, btnDeletarLocalizacao, 0,
-		SpringLayout.NORTH, btrNovoLocalizacao);
-	springLayout.putConstraint(SpringLayout.WEST, btnDeletarLocalizacao, 6, SpringLayout.EAST, btrNovoLocalizacao);
-	btnDeletarLocalizacao.addActionListener(new ActionListener() {
+	JButton btnDeletarNoticia = new JButton("Deletar Noticia");
+	springLayout.putConstraint(SpringLayout.WEST, btnDeletarNoticia, 109, SpringLayout.EAST, btrNovoNoticia);
+	btnDeletarNoticia.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent e) {
 		int row = table.getSelectedRow();
 
 		if (row != -1) {
-		    Localizacao localizacao= model.getRowAt(row);
+		    Noticia noticia= model.getRowAt(row);
 
 		    int resp = JOptionPane.showConfirmDialog(null,
-			    "Tem certeza que deseja deletar a localizacao: \n " + localizacao
+			    "Tem certeza que deseja deletar a noticia: \n " + noticia
 				    + "?");
 		    if (resp == 0) {
-			crtl.deletarRegistro(localizacao);
+			crtl.deletarRegistro(noticia);
 			atualizarModel();
 		    }
 		} else {
@@ -90,7 +88,9 @@ public class TabelaLocalizacaoWindow extends JInternalFrame {
 
 	    }
 	});
-	getContentPane().add(btnDeletarLocalizacao);
+	springLayout.putConstraint(SpringLayout.NORTH, btnDeletarNoticia, 0,
+		SpringLayout.NORTH, btrNovoNoticia);
+	getContentPane().add(btnDeletarNoticia);
 
 	JButton btnSair = new JButton("Sair");
 	btnSair.addActionListener(new ActionListener() {
@@ -102,16 +102,18 @@ public class TabelaLocalizacaoWindow extends JInternalFrame {
 	    }
 	});
 	springLayout.putConstraint(SpringLayout.NORTH, btnSair, 0,
-		SpringLayout.NORTH, btrNovoLocalizacao);
+		SpringLayout.NORTH, btrNovoNoticia);
 	springLayout.putConstraint(SpringLayout.EAST, btnSair, -10,
-		SpringLayout.EAST, getContentPane());
+		SpringLayout.EAST, getContentPane());	
 	getContentPane().add(btnSair);
 
 	JButton btnAtualizarLista = new JButton("Atualizar Lista");
 	springLayout.putConstraint(SpringLayout.NORTH, btnAtualizarLista, 6,
 		SpringLayout.SOUTH, scrollPane);
-	springLayout.putConstraint(SpringLayout.WEST, btnAtualizarLista, 6, SpringLayout.EAST, btnDeletarLocalizacao);
-	springLayout.putConstraint(SpringLayout.EAST, btnAtualizarLista, -6, SpringLayout.WEST, btnSair);
+	springLayout.putConstraint(SpringLayout.WEST, btnAtualizarLista, 6,
+		SpringLayout.EAST, btnDeletarNoticia);
+	springLayout.putConstraint(SpringLayout.EAST, btnAtualizarLista, -6,
+		SpringLayout.WEST, btnSair);
 	btnAtualizarLista.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent e) {
 		atualizarModel();

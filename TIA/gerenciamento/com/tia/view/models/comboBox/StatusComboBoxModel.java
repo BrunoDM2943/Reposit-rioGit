@@ -3,7 +3,7 @@ package com.tia.view.models.comboBox;
 import javax.swing.AbstractListModel;
 import javax.swing.ComboBoxModel;
 
-import com.tia.dao.StatusDAO;
+import com.tia.dao.StatusDataAccess;
 import com.tia.model.Status;
 
 
@@ -27,7 +27,7 @@ public class StatusComboBoxModel extends AbstractListModel<Status> implements Co
 	 * @param vector 
 	 */
 	public Status[] carregaStatus() {
-		StatusDAO dao = new StatusDAO();
+		StatusDataAccess dao = new StatusDataAccess();
 		return (Status[]) dao.lerTodos().toArray(Status.class);
 	}
 	

@@ -22,7 +22,7 @@ import com.tia.model.Sala;
  * @since 17/05/2014
  * 
  */
-public class SalaDAO implements DAO<Sala> {
+public class SalaDataAccess implements DataAccessObject<Sala> {
 
     @Override
     public Persistencia gravar(Sala e) {

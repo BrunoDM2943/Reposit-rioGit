@@ -14,7 +14,7 @@ import com.framework.Diretorios;
 import com.tia.controller.constantes.Persistencia;
 import com.tia.model.Status;
 
-public class StatusDAO implements DAO<Status> {
+public class StatusDataAccess implements DataAccessObject<Status> {
 	
 	@Override
 	public Persistencia gravar(Status e) {

@@ -5,7 +5,7 @@ import java.util.Hashtable;
 import javax.swing.JOptionPane;
 
 import com.tia.controller.constantes.Persistencia;
-import com.tia.dao.StatusDAO;
+import com.tia.dao.StatusDataAccess;
 import com.tia.model.Status;
 
 public class CadastrarStatusController implements ValidarCadastro{
@@ -21,7 +21,7 @@ public class CadastrarStatusController implements ValidarCadastro{
 
 	@Override
 	public Persistencia persistir(Hashtable<String, Object> parametros) {
-		StatusDAO dao = new StatusDAO();
+		StatusDataAccess dao = new StatusDataAccess();
 		Status status = new Status();
 		status.setId();
 		status.setStatus(parametros.get("status").toString());

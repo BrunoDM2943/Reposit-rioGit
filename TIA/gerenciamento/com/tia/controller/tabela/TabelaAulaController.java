@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 import alocacaoDinamica.listaEncadeada.ListaEncadeada;
 
 import com.tia.controller.constantes.Persistencia;
-import com.tia.dao.AulaDAO;
+import com.tia.dao.AulaDataAccess;
 import com.tia.model.Aula;
 import com.tia.view.models.table.AulaTableModel;
 
@@ -27,7 +27,7 @@ public class TabelaAulaController {
 	 * @return modelo
 	 */
 	public AulaTableModel geraTabela(AulaTableModel model) {
-		AulaDAO dao = new AulaDAO();
+		AulaDataAccess dao = new AulaDataAccess();
 		LinkedList<Aula> lista = new LinkedList<Aula>();
 		ListaEncadeada<Aula> listaAula = dao.lerTodos();
 
@@ -47,7 +47,7 @@ public class TabelaAulaController {
 	 *            Aula a ser removida
 	 */
 	public void deletarRegistro(Aula aula) {
-		AulaDAO dao = new AulaDAO();
+		AulaDataAccess dao = new AulaDataAccess();
 		Persistencia response = dao.deletar(aula);
 		if (response == Persistencia.REMOVIDO) {
 			JOptionPane.showMessageDialog(null,

@@ -6,8 +6,8 @@ import alocacaoDinamica.listaEncadeada.ListaEncadeada;
 
 import com.framework.Dia;
 import com.framework.HtmlGenerator;
-import com.tia.dao.AulaDAO;
-import com.tia.dao.LocalizacaoDAO;
+import com.tia.dao.AulaDataAccess;
+import com.tia.dao.LocalizacaoDataAccess;
 import com.tia.model.Aula;
 import com.tia.model.Localizacao;
 
@@ -15,8 +15,8 @@ public class LocalizacaoDao {
 	
 	public String lerTodos(){
 		String html  = "";
-		LocalizacaoDAO daoLocalizacao = new LocalizacaoDAO();
-		AulaDAO daoAula = new AulaDAO();
+		LocalizacaoDataAccess daoLocalizacao = new LocalizacaoDataAccess();
+		AulaDataAccess daoAula = new AulaDataAccess();
 		ListaEncadeada<Localizacao> listaLocalizacao = new ListaEncadeada<Localizacao>();
 		ListaEncadeada<Aula> listaAula = new ListaEncadeada<Aula>();
 		ListaEncadeada<Object> listaGeral = new ListaEncadeada<Object>();

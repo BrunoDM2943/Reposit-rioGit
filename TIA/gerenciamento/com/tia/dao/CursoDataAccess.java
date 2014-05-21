@@ -15,7 +15,7 @@ import com.framework.SistemaArquivos;
 import com.tia.controller.constantes.Persistencia;
 import com.tia.model.Curso;
 
-public class CursoDAO implements DAO<Curso> {
+public class CursoDataAccess implements DataAccessObject<Curso> {
 
 	@Override
 	public Persistencia gravar(Curso e) {

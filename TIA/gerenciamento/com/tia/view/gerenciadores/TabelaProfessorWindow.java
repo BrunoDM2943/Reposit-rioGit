@@ -30,7 +30,7 @@ public class TabelaProfessorWindow extends JInternalFrame {
 	setIconifiable(true);
 	setResizable(true);
 	setClosable(true);
-	setBounds(100, 100, 506, 382);
+	setBounds(100, 100, 640, 382);
 	SpringLayout springLayout = new SpringLayout();
 	getContentPane().setLayout(springLayout);
 

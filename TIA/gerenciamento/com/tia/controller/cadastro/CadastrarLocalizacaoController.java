@@ -5,7 +5,7 @@ import java.util.Hashtable;
 import javax.swing.JOptionPane;
 
 import com.tia.controller.constantes.Persistencia;
-import com.tia.dao.LocalizacaoDAO;
+import com.tia.dao.LocalizacaoDataAccess;
 import com.tia.model.Localizacao;
 import com.tia.model.Professor;
 import com.tia.model.Status;
@@ -22,7 +22,7 @@ public class CadastrarLocalizacaoController implements ValidarCadastro {
 
 	@Override
 	public Persistencia persistir(Hashtable<String, Object> parametros) {
-		LocalizacaoDAO dao = new LocalizacaoDAO();
+		LocalizacaoDataAccess dao = new LocalizacaoDataAccess();
 		Localizacao localizacao = new Localizacao();
 		localizacao.setId_localizacao();
 		localizacao.setProf((Professor)parametros.get("professor"));

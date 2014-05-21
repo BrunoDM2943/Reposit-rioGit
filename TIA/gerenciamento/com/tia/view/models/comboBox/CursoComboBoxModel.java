@@ -3,7 +3,7 @@ package com.tia.view.models.comboBox;
 import javax.swing.AbstractListModel;
 import javax.swing.ComboBoxModel;
 
-import com.tia.dao.CursoDAO;
+import com.tia.dao.CursoDataAccess;
 import com.tia.model.Curso;
 
 @SuppressWarnings("rawtypes")
@@ -19,7 +19,7 @@ public class CursoComboBoxModel extends AbstractListModel implements ComboBoxMod
      * @return vetor de cursos
      */
     public Curso[] carregaCursos() {
-	CursoDAO dao = new CursoDAO();
+	CursoDataAccess dao = new CursoDataAccess();
 	return (Curso[]) dao.lerTodos().toArray(Curso.class);
     }
     

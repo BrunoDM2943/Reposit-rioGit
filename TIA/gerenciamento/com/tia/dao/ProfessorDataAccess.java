@@ -15,7 +15,7 @@ import com.framework.SistemaArquivos;
 import com.tia.controller.constantes.Persistencia;
 import com.tia.model.Professor;
 
-public class ProfessorDAO implements DAO<Professor> {
+public class ProfessorDataAccess implements DataAccessObject<Professor> {
 
 	@Override
 	public Persistencia gravar(Professor e) {

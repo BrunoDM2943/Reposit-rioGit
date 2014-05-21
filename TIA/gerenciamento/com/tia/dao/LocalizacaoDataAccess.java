@@ -13,10 +13,10 @@ import com.framework.Diretorios;
 import com.tia.controller.constantes.Persistencia;
 import com.tia.model.Localizacao;
 
-public class LocalizacaoDAO implements DAO<Localizacao> {
+public class LocalizacaoDataAccess implements DataAccessObject<Localizacao> {
 
-	ProfessorDAO daoProf = new ProfessorDAO();
-	StatusDAO daoStatus = new StatusDAO();
+	ProfessorDataAccess daoProf = new ProfessorDataAccess();
+	StatusDataAccess daoStatus = new StatusDataAccess();
 
 	@Override
 	public Persistencia gravar(Localizacao e) {

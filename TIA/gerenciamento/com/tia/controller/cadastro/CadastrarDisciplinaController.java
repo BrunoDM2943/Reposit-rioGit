@@ -5,7 +5,7 @@ import java.util.Hashtable;
 import javax.swing.JOptionPane;
 
 import com.tia.controller.constantes.Persistencia;
-import com.tia.dao.DisciplinaDAO;
+import com.tia.dao.DisciplinaDataAccess;
 import com.tia.model.Curso;
 import com.tia.model.Disciplina;
 
@@ -33,7 +33,7 @@ public class CadastrarDisciplinaController implements ValidarCadastro {
 	public Persistencia persistir(Hashtable<String, Object> parametros) {
 		Disciplina disc = new Disciplina();
 		Curso curso = null;
-		DisciplinaDAO dao = new DisciplinaDAO();
+		DisciplinaDataAccess dao = new DisciplinaDataAccess();
 		disc.setIdDisciplina();
 		disc.setNome(parametros.get("nome").toString());
 		curso = (Curso) parametros.get("curso");

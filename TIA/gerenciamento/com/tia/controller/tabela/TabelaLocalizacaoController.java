@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 import alocacaoDinamica.listaEncadeada.ListaEncadeada;
 
 import com.tia.controller.constantes.Persistencia;
-import com.tia.dao.LocalizacaoDAO;
+import com.tia.dao.LocalizacaoDataAccess;
 import com.tia.model.Localizacao;
 import com.tia.view.models.table.LocalizacaoTableModel;
 
@@ -27,7 +27,7 @@ public class TabelaLocalizacaoController {
 	 * @return modelo
 	 */
 	public LocalizacaoTableModel geraTabela(LocalizacaoTableModel model) {
-		LocalizacaoDAO dao = new LocalizacaoDAO();
+		LocalizacaoDataAccess dao = new LocalizacaoDataAccess();
 		LinkedList<Localizacao> lista = new LinkedList<Localizacao>();
 		ListaEncadeada<Localizacao> listaLocalizacao = dao.lerTodos();
 
@@ -47,7 +47,7 @@ public class TabelaLocalizacaoController {
 	 *            Localizacao a ser removida
 	 */
 	public void deletarRegistro(Localizacao localizacao) {
-		LocalizacaoDAO dao = new LocalizacaoDAO();
+		LocalizacaoDataAccess dao = new LocalizacaoDataAccess();
 		Persistencia response = dao.deletar(localizacao);
 		if (response == Persistencia.REMOVIDO) {
 			JOptionPane.showMessageDialog(null,

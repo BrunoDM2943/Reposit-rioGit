@@ -19,6 +19,7 @@ import com.tia.view.cadastros.CadastrarAulaWindow;
 import com.tia.view.cadastros.CadastrarCurso;
 import com.tia.view.cadastros.CadastrarDisciplinaWindow;
 import com.tia.view.cadastros.CadastrarLocalizacaoWindow;
+import com.tia.view.cadastros.CadastrarNoticiaWindow;
 import com.tia.view.cadastros.CadastrarProfessor;
 import com.tia.view.cadastros.CadastrarSala;
 import com.tia.view.cadastros.CadastrarStatusWindow;
@@ -27,6 +28,7 @@ import com.tia.view.gerenciadores.TabelaCursoWindow;
 import com.tia.view.gerenciadores.TabelaDisciplinaWindow;
 import com.tia.view.gerenciadores.TabelaDocenteWindow;
 import com.tia.view.gerenciadores.TabelaLocalizacaoWindow;
+import com.tia.view.gerenciadores.TabelaNoticiaWindow;
 import com.tia.view.gerenciadores.TabelaProfessorWindow;
 import com.tia.view.gerenciadores.TabelaSalaWindow;
 
@@ -92,16 +94,6 @@ public class Menu {
 
 	JMenu mnCadastrar = new JMenu("Cadastrar");
 	menuBar.add(mnCadastrar);
-
-	JMenuItem mntmProfessor = new JMenuItem("Professor");
-	mntmProfessor.addActionListener(new ActionListener() {
-	    public void actionPerformed(ActionEvent arg0) {
-		CadastrarProfessor frame = new CadastrarProfessor();
-		frame.setVisible(true);
-		desktopPane.add(frame);
-
-	    }
-	});
 	
 	JMenuItem mntmAula = new JMenuItem("Aula");
 	mntmAula.addActionListener(new ActionListener() {
@@ -112,26 +104,16 @@ public class Menu {
 		}
 	});
 	mnCadastrar.add(mntmAula);
-	mnCadastrar.add(mntmProfessor);
-
-	JMenuItem mntmCurso = new JMenuItem("Curso");
-	mntmCurso.addActionListener(new ActionListener() {
-	    public void actionPerformed(ActionEvent arg0) {
-		CadastrarCurso curso = new CadastrarCurso();
-		curso.setVisible(true);
-		desktopPane.add(curso);
-	    }
-	});
-	mnCadastrar.add(mntmCurso);
-
-	JMenuItem mntmSala = new JMenuItem("Sala");
-	mntmSala.addActionListener(new ActionListener() {
-	    public void actionPerformed(ActionEvent arg0) {
-		CadastrarSala sala = new CadastrarSala();
-		sala.setVisible(true);
-		desktopPane.add(sala);
-	    }
-	});
+	
+		JMenuItem mntmCurso = new JMenuItem("Curso");
+		mntmCurso.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent arg0) {
+			CadastrarCurso curso = new CadastrarCurso();
+			curso.setVisible(true);
+			desktopPane.add(curso);
+		    }
+		});
+		mnCadastrar.add(mntmCurso);
 	
 	JMenuItem mntmDisciplina = new JMenuItem("Disciplina");
 	mntmDisciplina.addActionListener(new ActionListener() {
@@ -142,6 +124,36 @@ public class Menu {
 		}
 	});
 	mnCadastrar.add(mntmDisciplina);
+
+	JMenuItem mntmSala = new JMenuItem("Sala");
+	mntmSala.addActionListener(new ActionListener() {
+	    public void actionPerformed(ActionEvent arg0) {
+		CadastrarSala sala = new CadastrarSala();
+		sala.setVisible(true);
+		desktopPane.add(sala);
+	    }
+	});
+	
+	JMenuItem mntmNotcia = new JMenuItem("Notícia");
+	mntmNotcia.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+			CadastrarNoticiaWindow window = new CadastrarNoticiaWindow();
+			window.setVisible(true);
+			desktopPane.add(window);
+		}
+	});
+	mnCadastrar.add(mntmNotcia);
+	
+		JMenuItem mntmProfessor = new JMenuItem("Professor");
+		mntmProfessor.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent arg0) {
+			CadastrarProfessor frame = new CadastrarProfessor();
+			frame.setVisible(true);
+			desktopPane.add(frame);
+
+		    }
+		});
+		mnCadastrar.add(mntmProfessor);
 	mnCadastrar.add(mntmSala);
 	
 	JMenuItem mntmStatus = new JMenuItem("Status");
@@ -230,6 +242,16 @@ public class Menu {
 		}
 	});
 	mnTabelas.add(mntmLocalizacao);
+	
+	JMenuItem mntmNotcias = new JMenuItem("Notícias");
+	mntmNotcias.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			TabelaNoticiaWindow window = new TabelaNoticiaWindow();
+			window.setVisible(true);
+			desktopPane.add(window);
+		}
+	});
+	mnTabelas.add(mntmNotcias);
 	mnTabelas.add(mntmProfessores);
 	
 	JMenuItem mntmSala_1 = new JMenuItem("Sala");

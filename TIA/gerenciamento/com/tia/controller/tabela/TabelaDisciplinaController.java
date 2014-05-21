@@ -8,7 +8,7 @@ import alocacaoDinamica.listaEncadeada.ListaEncadeada;
 
 import com.tia.controller.cadastro.CadastrarDisciplinaController;
 import com.tia.controller.constantes.Persistencia;
-import com.tia.dao.DisciplinaDAO;
+import com.tia.dao.DisciplinaDataAccess;
 import com.tia.model.Disciplina;
 import com.tia.view.models.table.DisciplinaTableModel;
 
@@ -28,7 +28,7 @@ public class TabelaDisciplinaController {
      * @return modelo
      */
     public DisciplinaTableModel geraTabela(DisciplinaTableModel model) {
-	DisciplinaDAO dao = new DisciplinaDAO();
+	DisciplinaDataAccess dao = new DisciplinaDataAccess();
 	LinkedList<Disciplina> lista = new LinkedList<Disciplina>();
 	ListaEncadeada<Disciplina> listaDisciplina = dao.lerTodos();
 
@@ -48,7 +48,7 @@ public class TabelaDisciplinaController {
      *            Disciplina a ser removida
      */
     public void deletarRegistro(Disciplina disc) {
-	DisciplinaDAO dao = new DisciplinaDAO();
+	DisciplinaDataAccess dao = new DisciplinaDataAccess();
 	Persistencia response = dao.deletar(disc);
 	if (response == Persistencia.REMOVIDO) {
 	    JOptionPane.showMessageDialog(null,
@@ -61,7 +61,7 @@ public class TabelaDisciplinaController {
 
     // FIXME Quando atualizar, será que não vai gerar duplicidade
     public void atualizaDisciplina(int row, int column, Disciplina disc) {
-	DisciplinaDAO dao = new DisciplinaDAO();
+	DisciplinaDataAccess dao = new DisciplinaDataAccess();
 	Persistencia response;
 	CadastrarDisciplinaController crtl;
 	switch (column) {

@@ -6,7 +6,7 @@ import javax.swing.ComboBoxModel;
 import alocacaoDinamica.fila.Fila;
 import alocacaoDinamica.listaEncadeada.ListaEncadeada;
 
-import com.tia.dao.DisciplinaDAO;
+import com.tia.dao.DisciplinaDataAccess;
 import com.tia.model.Curso;
 import com.tia.model.Disciplina;
 
@@ -16,7 +16,7 @@ public class DisciplinaComboBoxModel extends AbstractListModel<Disciplina> imple
 	Disciplina[] disciplinas;
 	Disciplina selection = null;
 	public DisciplinaComboBoxModel(Curso curso) {
-		DisciplinaDAO dao = new DisciplinaDAO();
+		DisciplinaDataAccess dao = new DisciplinaDataAccess();
 		ListaEncadeada<Disciplina> lista = dao.lerTodos();
 		Fila<Disciplina> fila = new Fila<Disciplina>();
 		while(lista.hasNext()){

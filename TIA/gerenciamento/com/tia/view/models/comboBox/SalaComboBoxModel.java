@@ -3,7 +3,7 @@ package com.tia.view.models.comboBox;
 import javax.swing.AbstractListModel;
 import javax.swing.ComboBoxModel;
 
-import com.tia.dao.SalaDAO;
+import com.tia.dao.SalaDataAccess;
 import com.tia.model.Sala;
 
 
@@ -20,7 +20,7 @@ public class SalaComboBoxModel extends AbstractListModel<Sala> implements ComboB
 	 * @param vector 
 	 */
 	public Sala[] carregaStatus() {
-	    	SalaDAO dao = new SalaDAO();	    	
+	    	SalaDataAccess dao = new SalaDataAccess();	    	
 		return (Sala[]) dao.lerTodos().toArray(Sala.class);
 	}
 	

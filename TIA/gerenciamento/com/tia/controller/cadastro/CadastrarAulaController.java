@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 import com.framework.Dia;
 import com.tia.controller.constantes.Persistencia;
 import com.tia.controller.constantes.Turno;
-import com.tia.dao.AulaDAO;
+import com.tia.dao.AulaDataAccess;
 import com.tia.model.Aula;
 import com.tia.model.Disciplina;
 import com.tia.model.Professor;
@@ -77,7 +77,7 @@ public class CadastrarAulaController implements ValidarCadastro{
 		aula.setIni(ini);
 		aula.setFim(fim);
 		
-		AulaDAO dao = new AulaDAO();		
+		AulaDataAccess dao = new AulaDataAccess();		
 		return dao.gravar(aula);
 	}
 

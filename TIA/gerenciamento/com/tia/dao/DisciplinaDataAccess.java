@@ -14,7 +14,7 @@ import com.framework.Diretorios;
 import com.tia.controller.constantes.Persistencia;
 import com.tia.model.Disciplina;
 
-public class DisciplinaDAO implements DAO<Disciplina> {
+public class DisciplinaDataAccess implements DataAccessObject<Disciplina> {
 
 	@Override
 	public Persistencia gravar(Disciplina e) {

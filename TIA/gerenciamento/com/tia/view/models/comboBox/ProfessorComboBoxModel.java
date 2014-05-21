@@ -5,8 +5,8 @@ import javax.swing.ComboBoxModel;
 
 import alocacaoDinamica.listaEncadeada.ListaEncadeada;
 
-import com.tia.dao.DocenteDAO;
-import com.tia.dao.ProfessorDAO;
+import com.tia.dao.DocenteDataAccess;
+import com.tia.dao.ProfessorDataAccess;
 import com.tia.model.Curso;
 import com.tia.model.Docente;
 import com.tia.model.Professor;
@@ -17,7 +17,7 @@ public class ProfessorComboBoxModel extends AbstractListModel<Professor> impleme
     Professor[] professor;
 
     public ProfessorComboBoxModel(Curso curso) {
-		DocenteDAO daoDocente = new DocenteDAO();
+		DocenteDataAccess daoDocente = new DocenteDataAccess();
 		Docente docente = null;
 		ListaEncadeada<Docente> listaDocente = daoDocente.lerTodos();
 		ListaEncadeada<Professor> listaProfessor = new ListaEncadeada<Professor>();
@@ -49,7 +49,7 @@ public class ProfessorComboBoxModel extends AbstractListModel<Professor> impleme
      * @param vector
      */
     public Professor[] carregaProfessores() {
-	ProfessorDAO dao = new ProfessorDAO();
+	ProfessorDataAccess dao = new ProfessorDataAccess();
 	return (Professor[]) dao.lerTodos().toArray(Professor.class);
     }
 

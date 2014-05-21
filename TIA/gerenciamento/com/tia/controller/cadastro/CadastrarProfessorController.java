@@ -8,9 +8,9 @@ import javax.swing.JOptionPane;
 import alocacaoDinamica.listaEncadeada.ListaEncadeada;
 
 import com.tia.controller.constantes.Persistencia;
-import com.tia.dao.CursoDAO;
-import com.tia.dao.DocenteDAO;
-import com.tia.dao.ProfessorDAO;
+import com.tia.dao.CursoDataAccess;
+import com.tia.dao.DocenteDataAccess;
+import com.tia.dao.ProfessorDataAccess;
 import com.tia.model.Curso;
 import com.tia.model.Docente;
 import com.tia.model.Professor;
@@ -51,8 +51,8 @@ public class CadastrarProfessorController implements ValidarCadastro {
     @SuppressWarnings("unchecked")
 	@Override
     public Persistencia persistir(Hashtable<String, Object> parametros) {
-	ProfessorDAO daoProf = new ProfessorDAO();
-	DocenteDAO daoDocente = new DocenteDAO();
+	ProfessorDataAccess daoProf = new ProfessorDataAccess();
+	DocenteDataAccess daoDocente = new DocenteDataAccess();
 	Professor prof = new Professor();
 	prof.setId();
 	prof.setNome(parametros.get("nome").toString());
@@ -92,7 +92,7 @@ public class CadastrarProfessorController implements ValidarCadastro {
      * @return
      */
     public Curso[] carregajLCursos(){
-    	CursoDAO dao = new CursoDAO();
+    	CursoDataAccess dao = new CursoDataAccess();
     	Curso[] vetor = (Curso[])dao.lerTodos().toArray(Curso.class);
     	dao = null;
     	return vetor;

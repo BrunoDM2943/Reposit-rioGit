@@ -8,7 +8,7 @@ import alocacaoDinamica.listaEncadeada.ListaEncadeada;
 
 import com.tia.controller.cadastro.CadastrarProfessorController;
 import com.tia.controller.constantes.Persistencia;
-import com.tia.dao.ProfessorDAO;
+import com.tia.dao.ProfessorDataAccess;
 import com.tia.model.Professor;
 import com.tia.view.models.table.ProfessorTableModel;
 
@@ -26,7 +26,7 @@ public class TabelaProfessorController {
      * @return modelo
      */
     public ProfessorTableModel geraTabela(ProfessorTableModel model) {
-	ProfessorDAO dao = new ProfessorDAO();
+	ProfessorDataAccess dao = new ProfessorDataAccess();
 	LinkedList<Professor> lista = new LinkedList<Professor>();
 	ListaEncadeada<Professor> listaProfessor = dao.lerTodos();
 	
@@ -44,7 +44,7 @@ public class TabelaProfessorController {
      * @param Professor Professor a ser removida
      */
     public void deletarRegistro(Professor prof) {
-	ProfessorDAO dao = new ProfessorDAO();
+	ProfessorDataAccess dao = new ProfessorDataAccess();
 	Persistencia response = dao.deletar(prof);
 	if(response == Persistencia.REMOVIDO) {
 	    JOptionPane.showMessageDialog(null, "Registro removido com sucesso!");
@@ -54,7 +54,7 @@ public class TabelaProfessorController {
     }
 
     public void atualizarSala(int row, int column, Professor prof) {
-	ProfessorDAO dao = new ProfessorDAO();
+	ProfessorDataAccess dao = new ProfessorDataAccess();
 	Persistencia response;
 	CadastrarProfessorController crtl;
 	switch (column) {

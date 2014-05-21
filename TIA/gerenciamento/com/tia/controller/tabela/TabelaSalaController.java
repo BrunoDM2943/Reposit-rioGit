@@ -8,7 +8,7 @@ import alocacaoDinamica.listaEncadeada.ListaEncadeada;
 
 import com.tia.controller.cadastro.CadastrarSalaController;
 import com.tia.controller.constantes.Persistencia;
-import com.tia.dao.SalaDAO;
+import com.tia.dao.SalaDataAccess;
 import com.tia.model.Sala;
 import com.tia.view.models.table.SalaTableModel;
 
@@ -26,7 +26,7 @@ public class TabelaSalaController {
      * @return modelo
      */
     public SalaTableModel geraTabela(SalaTableModel model) {
-	SalaDAO dao = new SalaDAO();
+	SalaDataAccess dao = new SalaDataAccess();
 	LinkedList<Sala> lista = new LinkedList<Sala>();
 	ListaEncadeada<Sala> listaSala = dao.lerTodos();
 	
@@ -44,7 +44,7 @@ public class TabelaSalaController {
      * @param sala Sala a ser removida
      */
     public void deletarRegistro(Sala sala) {
-	SalaDAO dao = new SalaDAO();
+	SalaDataAccess dao = new SalaDataAccess();
 	Persistencia response = dao.deletar(sala);
 	if(response == Persistencia.REMOVIDO) {
 	    JOptionPane.showMessageDialog(null, "Registro removido com sucesso!");
@@ -54,7 +54,7 @@ public class TabelaSalaController {
     }
 
     public void atualizarSala(int row, int column, Sala sala) {
-	SalaDAO dao = new SalaDAO();
+	SalaDataAccess dao = new SalaDataAccess();
 	Persistencia response;
 	CadastrarSalaController crtl;
 	switch (column) {

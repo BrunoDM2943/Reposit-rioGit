@@ -30,7 +30,7 @@ public class TabelaCursoWindow extends JInternalFrame {
 		setIconifiable(true);
 		setResizable(true);
 		setClosable(true);
-		setBounds(100, 100, 506, 382);
+		setBounds(100, 100, 594, 382);
 		SpringLayout springLayout = new SpringLayout();
 		getContentPane().setLayout(springLayout);
 
@@ -48,6 +48,7 @@ public class TabelaCursoWindow extends JInternalFrame {
 		table = new JTable();
 		model = crtl.geraTabela(model);
 		table.setModel(model);
+		table.setAutoCreateRowSorter(true);
 		
 		scrollPane.setViewportView(table);
 

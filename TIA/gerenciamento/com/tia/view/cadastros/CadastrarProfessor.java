@@ -25,7 +25,7 @@ import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.RowSpec;
 import com.tia.controller.cadastro.CadastrarProfessorController;
 import com.tia.controller.constantes.Persistencia;
-import com.tia.dao.CursoDAO;
+import com.tia.dao.CursoDataAccess;
 import com.tia.model.Curso;
 
 public class CadastrarProfessor extends JInternalFrame {
@@ -91,7 +91,7 @@ public class CadastrarProfessor extends JInternalFrame {
 			panel.add(lblCursos, "2, 4");
 			
 			jLCursos = new JList<Curso>(new DefaultListModel<Curso>());
-			CursoDAO dao = new CursoDAO();
+			CursoDataAccess dao = new CursoDataAccess();
 			jLCursos.setListData((Curso[])dao.lerTodos().toArray(Curso.class));
 			panel.add(jLCursos, "4, 4, 1, 3, fill, fill");
 

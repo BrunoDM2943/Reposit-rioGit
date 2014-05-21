@@ -14,10 +14,10 @@ import com.framework.Diretorios;
 import com.tia.controller.constantes.Persistencia;
 import com.tia.model.Docente;
 
-public class DocenteDAO implements DAO<Docente>{
+public class DocenteDataAccess implements DataAccessObject<Docente>{
 
-	private ProfessorDAO daoProf = new ProfessorDAO();
-	private CursoDAO daoCurso = new CursoDAO();
+	private ProfessorDataAccess daoProf = new ProfessorDataAccess();
+	private CursoDataAccess daoCurso = new CursoDataAccess();
 	
 	@Override
 	public Persistencia gravar(Docente e) {

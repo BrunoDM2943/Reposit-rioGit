@@ -19,11 +19,11 @@ import com.tia.controller.constantes.Persistencia;
 import com.tia.controller.constantes.Turno;
 import com.tia.model.Aula;
 
-public class AulaDAO implements DAO<Aula> {
+public class AulaDataAccess implements DataAccessObject<Aula> {
 
-	DisciplinaDAO discDAO = new DisciplinaDAO();
-	ProfessorDAO profDAO = new ProfessorDAO();
-	SalaDAO salaDAO = new SalaDAO();
+	DisciplinaDataAccess discDAO = new DisciplinaDataAccess();
+	ProfessorDataAccess profDAO = new ProfessorDataAccess();
+	SalaDataAccess salaDAO = new SalaDataAccess();
 	SimpleDateFormat formatador = new SimpleDateFormat("HH:mm");
 	Date data;
 

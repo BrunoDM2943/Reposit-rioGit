@@ -5,7 +5,7 @@ import java.util.Hashtable;
 import javax.swing.JOptionPane;
 
 import com.tia.controller.constantes.Persistencia;
-import com.tia.dao.SalaDAO;
+import com.tia.dao.SalaDataAccess;
 import com.tia.model.Sala;
 
 /**
@@ -26,7 +26,7 @@ public class CadastrarSalaController implements ValidarCadastro{
 
     @Override
     public Persistencia persistir(Hashtable<String, Object> parametros) {
-	SalaDAO dao = new SalaDAO();
+	SalaDataAccess dao = new SalaDataAccess();
 	Sala sala= new Sala();
 	sala.setId_sala();
 	sala.setNome(parametros.get("nome").toString());
