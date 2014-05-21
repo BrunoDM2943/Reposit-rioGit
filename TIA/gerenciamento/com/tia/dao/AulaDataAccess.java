@@ -203,6 +203,13 @@ public class AulaDataAccess implements DataAccessObject<Aula> {
 		return true;
 	}
 
+	/**
+	 * Lê os as aulas de um dia
+	 * @param diaAtual Dia no qual as aulas serão filtradas
+	 * @return Lista Encadeada contendo as aulas do dia
+	 * @author bruno.martins
+	 * @since 21/05/2014
+	 */
 	public ListaEncadeada<Aula> ler(Dia diaAtual){
 		String path = Diretorios.AULA.toString() + "\\" + diaAtual.toString();
 		File[] arquivos = new File(path).listFiles();

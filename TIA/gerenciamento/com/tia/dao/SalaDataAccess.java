@@ -44,8 +44,7 @@ public class SalaDataAccess implements DataAccessObject<Sala> {
 		e1.printStackTrace();
 		return Persistencia.ERRO;
 	    }
-	} else {
-	    SistemaArquivos.rollback(Diretorios.SALA.getAutoIncremento());
+	} else {		
 	    return Persistencia.DUPLICADO;
 	}
     }

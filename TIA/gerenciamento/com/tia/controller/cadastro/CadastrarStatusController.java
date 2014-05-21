@@ -8,6 +8,11 @@ import com.tia.controller.constantes.Persistencia;
 import com.tia.dao.StatusDataAccess;
 import com.tia.model.Status;
 
+/**
+ * Cadastrar um novo status no sistemas
+ * @author bruno.martins
+ *
+ */
 public class CadastrarStatusController implements ValidarCadastro{
 
 	StringBuilder msg = new StringBuilder();

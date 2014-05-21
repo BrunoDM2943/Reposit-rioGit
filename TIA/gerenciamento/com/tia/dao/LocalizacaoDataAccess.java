@@ -117,6 +117,10 @@ public class LocalizacaoDataAccess implements DataAccessObject<Localizacao> {
 		return false;
 	}
 
+	/**
+	 * Gera a lista de localizacoes e, posteriomente, chama o método para gerar o html
+	 * @return Html contendo as localizações
+	 */
 	public String geraHtmlLocalizacao(){
 		String html  = "";
 		LocalizacaoDataAccess daoLocalizacao = new LocalizacaoDataAccess();

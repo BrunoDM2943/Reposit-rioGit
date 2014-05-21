@@ -16,37 +16,9 @@ import com.tia.model.Status;
 
 public abstract class SistemaArquivos {
 
-    /**
-     * Método para retomar a chave primária de um registro
-     * 
-     * @param path
-     *            Caminho do arquivo
-     * @author Bruno
-     * @since 03/05/2014
-     */
-    public static void rollback(String path) {
-	StringBuilder builder = new StringBuilder();
-	builder.append("A chave ");
-	try {
-	    System.out
-		    .println("Voltando a chave primária para um valor anterior");
-	    BufferedReader reader = new BufferedReader(new FileReader(path));
-	    int chave = Integer.parseInt(reader.readLine());
-	    builder.append(chave);
-	    chave--;
-	    reader.close();
-	    BufferedWriter writer = new BufferedWriter(new FileWriter(path));
-	    builder.append(" " + "voltou para " + chave);
-	    writer.append(String.valueOf(chave));
-	    reader.close();
-	    writer.close();
-	    System.out.println(builder.toString());
-	} catch (IOException e) {
-	    System.err.println(e.getMessage());
-	    e.printStackTrace();
-	}
 
-    }
+
+    
 
     /**
      * Gera uma chave primária para uma entidade

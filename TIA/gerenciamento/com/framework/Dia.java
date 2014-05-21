@@ -10,6 +10,7 @@ import java.util.Calendar;
  * @version 19/05/2014
  */
 public enum Dia {
+	
 	SEG("Segunda"),
 	TER("Terca"),
 	QUA("Quarta"),
@@ -22,8 +23,7 @@ public enum Dia {
 	/**
 	 * Construtor
 	 * 
-	 * @param dia
-	 *            dia da semana
+	 * @param dia dia da semana
 	 */
 	private Dia(String dia) {
 		this.dia = dia;

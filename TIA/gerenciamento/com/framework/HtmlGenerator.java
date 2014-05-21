@@ -7,8 +7,21 @@ import java.io.IOException;
 
 import alocacaoDinamica.listaEncadeada.ListaEncadeada;
 
+/**
+ * Classe responsável por gerar htmls
+ * @author bruno.martins
+ * @since 21/05/2014
+ * @version 21/05/2014
+ */
 public class HtmlGenerator {
 	
+	/**
+	 * Retorna um html com layout de uma mensagem  
+	 * @param nomeArquivo Nome do arquivo contendo o layout
+	 * @return HTML
+	 * @author bruno.martins
+	 * @since 21/05/2014
+	 */
 	public String getHtmlFile(String nomeArquivo){
 		StringBuilder html = new StringBuilder();
 		File arquivo = new File(Diretorios.LAYOUT.toString() + "\\" + nomeArquivo + ".html");
@@ -28,6 +41,11 @@ public class HtmlGenerator {
 		return html.toString();
 	}
 
+	/**
+	 * Transforma uma lista de dados em um conjunto de blocos no html
+	 * @param listaGeral Lista contendo os dados
+	 * @return Html contendo os blocos
+	 */
 	public String gerarHtml(ListaEncadeada<Object> listaGeral) {
 		StringBuilder html = new StringBuilder();
 		html.append("<html> \n");

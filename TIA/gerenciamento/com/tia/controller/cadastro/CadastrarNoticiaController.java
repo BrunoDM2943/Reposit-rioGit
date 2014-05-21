@@ -8,6 +8,12 @@ import com.tia.controller.constantes.Persistencia;
 import com.tia.dao.NoticiaDataAccess;
 import com.tia.model.Noticia;
 
+/**
+ * Cadastra uma nova notícia no sistema
+ * @author bruno.martins
+ * @since 21/05/2014
+ * @version 21/05/2014
+ */
 public class CadastrarNoticiaController implements ValidarCadastro{
 
 	StringBuilder msg = new StringBuilder();

@@ -41,12 +41,10 @@ public class CursoDataAccess implements DataAccessObject<Curso> {
 				return Persistencia.GRAVADO;
 			} catch (IOException e1) {
 				System.err.println(e1.getMessage());
-				e1.printStackTrace();
-				SistemaArquivos.rollback(Diretorios.CURSOS.getAutoIncremento());
+				e1.printStackTrace();				
 				return Persistencia.ERRO;
 			}
-		} else {
-			SistemaArquivos.rollback(Diretorios.CURSOS.getAutoIncremento());
+		} else {			
 			return Persistencia.DUPLICADO;
 		}
 	}

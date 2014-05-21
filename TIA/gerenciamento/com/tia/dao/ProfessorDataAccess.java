@@ -30,15 +30,11 @@ public class ProfessorDataAccess implements DataAccessObject<Professor> {
 				return Persistencia.GRAVADO;
 			} catch (IOException e1) {
 				System.err.println(e1.getMessage());
-				e1.printStackTrace();
-				SistemaArquivos.rollback(Diretorios.PROFESSORES
-						.getAutoIncremento());
+				e1.printStackTrace();				
 				return Persistencia.ERRO;
 			}
 
 		} else {
-			SistemaArquivos
-					.rollback(Diretorios.PROFESSORES.getAutoIncremento());
 			return Persistencia.DUPLICADO;
 		}
 	}

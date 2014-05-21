@@ -10,6 +10,13 @@ import com.tia.model.Localizacao;
 import com.tia.model.Professor;
 import com.tia.model.Status;
 
+/**
+ * Classe responsável por gravar uma nova localização
+ * @author bruno.martins
+ * @since 21/05/2014
+ * @version 21/05/2014
+ *
+ */
 public class CadastrarLocalizacaoController implements ValidarCadastro {
 
 	StringBuffer msg = new StringBuffer();
