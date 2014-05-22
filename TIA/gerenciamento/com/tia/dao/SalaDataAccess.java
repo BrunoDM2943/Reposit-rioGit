@@ -11,7 +11,6 @@ import java.io.IOException;
 import alocacaoDinamica.listaEncadeada.ListaEncadeada;
 
 import com.framework.Diretorios;
-import com.framework.SistemaArquivos;
 import com.tia.controller.constantes.Persistencia;
 import com.tia.model.Sala;
 
