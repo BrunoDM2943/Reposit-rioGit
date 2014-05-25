@@ -21,6 +21,12 @@ import com.jgoodies.forms.layout.RowSpec;
 import com.tia.controller.cadastro.CadastrarStatusController;
 import com.tia.controller.constantes.Persistencia;
 
+/**
+ * Janela responsável pelo cadastro de status
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ */
 public class CadastrarStatusWindow extends JDialog {
 
 

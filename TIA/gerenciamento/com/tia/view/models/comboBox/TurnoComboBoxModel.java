@@ -8,6 +8,13 @@ import alocacaoDinamica.listaEncadeada.ListaEncadeada;
 import com.tia.controller.constantes.Turno;
 import com.tia.model.Curso;
 
+/**
+ * Classe responsável pelo controle do comboBox de Turnos
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ *
+ */
 public class TurnoComboBoxModel extends AbstractListModel<Turno> implements ComboBoxModel<Turno>{
 
 	private static final long serialVersionUID = 4196829445711604680L;

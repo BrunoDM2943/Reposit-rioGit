@@ -38,6 +38,12 @@ import com.tia.view.models.comboBox.ProfessorComboBoxModel;
 import com.tia.view.models.comboBox.SalaComboBoxModel;
 import com.tia.view.models.comboBox.TurnoComboBoxModel;
 
+/**
+ * Janela responsável pelo cadastro de aulas
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ */
 public class CadastrarAulaWindow extends JInternalFrame {
 
 

@@ -16,6 +16,12 @@ import com.tia.view.Menu;
 import com.tia.view.cadastros.CadastrarCurso;
 import com.tia.view.models.table.CursoTableModel;
 
+/**
+ * Janela responsável pela gerenciamento de cursos
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ */
 public class TabelaCursoWindow extends JInternalFrame {
 	/**
      * 

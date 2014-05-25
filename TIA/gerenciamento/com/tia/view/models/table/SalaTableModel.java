@@ -8,6 +8,7 @@ import javax.swing.table.AbstractTableModel;
 import com.tia.model.Sala;
 
 /**
+ * Classe responsável pelo jTable de salas
  * @author Bruno Damasceno Martins
  * @since 26/12/2013
  */

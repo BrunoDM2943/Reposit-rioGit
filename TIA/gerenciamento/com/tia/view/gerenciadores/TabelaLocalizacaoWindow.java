@@ -16,6 +16,12 @@ import com.tia.view.Menu;
 import com.tia.view.cadastros.CadastrarLocalizacaoWindow;
 import com.tia.view.models.table.LocalizacaoTableModel;
 
+/**
+ * Janela responsável pela gerenciamento de localizacoes
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ */
 public class TabelaLocalizacaoWindow extends JInternalFrame {
     /**
      * 

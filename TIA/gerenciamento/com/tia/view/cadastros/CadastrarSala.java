@@ -27,6 +27,13 @@ import com.jgoodies.forms.layout.RowSpec;
 import com.tia.controller.cadastro.CadastrarSalaController;
 import com.tia.controller.constantes.Persistencia;
 
+
+/**
+ * Janela responsável pelo cadastro de salas
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ */
 public class CadastrarSala extends JInternalFrame {
 
     /**

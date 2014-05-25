@@ -7,6 +7,13 @@ import javax.swing.table.AbstractTableModel;
 
 import com.tia.model.Professor;
 
+/**
+ * Classe responsável pelo controle do JTable de professores
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ *
+ */
 public class ProfessorTableModel extends AbstractTableModel {
 
     private static final long serialVersionUID = 3735242513201969309L;

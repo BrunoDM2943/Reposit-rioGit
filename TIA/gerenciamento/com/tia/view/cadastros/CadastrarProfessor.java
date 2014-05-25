@@ -29,6 +29,12 @@ import com.tia.controller.constantes.Persistencia;
 import com.tia.dao.CursoDataAccess;
 import com.tia.model.Curso;
 
+/**
+ * Janela responsável pelo cadastro de professores
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ */
 public class CadastrarProfessor extends JInternalFrame {
 
     private static final long serialVersionUID = 19L;

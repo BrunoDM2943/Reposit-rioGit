@@ -9,6 +9,13 @@ import com.tia.model.Localizacao;
 import com.tia.model.Professor;
 import com.tia.model.Status;
 
+/**
+ * Classe responsável pelo controle do JTable de localizacoes
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ *
+ */
 public class LocalizacaoTableModel extends AbstractTableModel {
 
 	private static final long serialVersionUID = 3015180535339312881L;

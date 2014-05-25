@@ -16,6 +16,12 @@ import com.tia.view.Menu;
 import com.tia.view.cadastros.CadastrarCurso;
 import com.tia.view.models.table.DisciplinaTableModel;
 
+/**
+ * Janela responsável pela gerenciamento de disciplina
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ */
 public class TabelaDisciplinaWindow extends JInternalFrame {
 	/**
      * 

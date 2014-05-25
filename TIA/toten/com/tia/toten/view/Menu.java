@@ -11,6 +11,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+/**
+ * Classe responsável pelo menu do TIA - Terminal
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ *
+ */
 public class Menu extends JFrame {
 
 

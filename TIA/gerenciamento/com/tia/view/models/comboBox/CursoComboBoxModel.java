@@ -6,6 +6,13 @@ import javax.swing.ComboBoxModel;
 import com.tia.dao.CursoDataAccess;
 import com.tia.model.Curso;
 
+/**
+ * Classe responsável pelo controle do comboBox de Cursos
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ *
+ */
 @SuppressWarnings("rawtypes")
 public class CursoComboBoxModel extends AbstractListModel implements ComboBoxModel  {
 

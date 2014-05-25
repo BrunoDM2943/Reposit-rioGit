@@ -16,6 +16,12 @@ import com.tia.view.Menu;
 import com.tia.view.cadastros.CadastrarAulaWindow;
 import com.tia.view.models.table.AulaTableModel;
 
+/**
+ * Janela responsável pela gerenciamento de aulas
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ */
 public class TabelaAulaWindow extends JInternalFrame {
     /**
      * 

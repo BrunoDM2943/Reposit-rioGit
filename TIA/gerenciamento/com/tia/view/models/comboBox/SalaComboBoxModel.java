@@ -7,6 +7,13 @@ import com.tia.dao.SalaDataAccess;
 import com.tia.model.Sala;
 
 
+/**
+ * Classe responsável pelo controle do comboBox de salas
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ *
+ */
 public class SalaComboBoxModel extends AbstractListModel<Sala> implements ComboBoxModel<Sala> {
 	
 	private static final long	serialVersionUID	= 1L;

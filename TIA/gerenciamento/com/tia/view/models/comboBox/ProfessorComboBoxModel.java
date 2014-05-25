@@ -11,6 +11,13 @@ import com.tia.model.Curso;
 import com.tia.model.Docente;
 import com.tia.model.Professor;
 
+/**
+ * Classe responsável pelo controle do comboBox de professores
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ *
+ */
 public class ProfessorComboBoxModel extends AbstractListModel<Professor> implements	ComboBoxModel<Professor> {
 
     private static final long serialVersionUID = 1L;

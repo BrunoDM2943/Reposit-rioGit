@@ -10,6 +10,13 @@ import com.tia.dao.DisciplinaDataAccess;
 import com.tia.model.Curso;
 import com.tia.model.Disciplina;
 
+/**
+ * Classe responsável pelo controle do comboBox de disciplinas
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ *
+ */
 public class DisciplinaComboBoxModel extends AbstractListModel<Disciplina> implements ComboBoxModel<Disciplina> {
 	
 	private static final long serialVersionUID = -1161680969380234934L;

@@ -32,15 +32,18 @@ import com.tia.view.gerenciadores.TabelaNoticiaWindow;
 import com.tia.view.gerenciadores.TabelaProfessorWindow;
 import com.tia.view.gerenciadores.TabelaSalaWindow;
 
+/**
+ * Classe responsável pelo menu do TIA - Coordenação
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ *
+ */
 public class Menu {
 
     private JFrame frmMenu;
     public static JDesktopPane desktopPane = new JDesktopPane();
-    public String a;
 
-    /**
-     * Launch the application.
-     */
     public static void main(String[] args) {
 	EventQueue.invokeLater(new Runnable() {
 

@@ -16,6 +16,12 @@ import com.tia.view.Menu;
 import com.tia.view.cadastros.CadastrarProfessor;
 import com.tia.view.models.table.ProfessorTableModel;
 
+/**
+ * Janela responsável pela gerenciamento de professores
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ */
 public class TabelaProfessorWindow extends JInternalFrame {
     /**
      * 

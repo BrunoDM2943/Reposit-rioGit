@@ -16,6 +16,12 @@ import com.tia.view.Menu;
 import com.tia.view.cadastros.CadastrarSala;
 import com.tia.view.models.table.SalaTableModel;
 
+/**
+ * Janela responsável pela gerenciamento de salas
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ */
 public class TabelaSalaWindow extends JInternalFrame {
     /**
      * 

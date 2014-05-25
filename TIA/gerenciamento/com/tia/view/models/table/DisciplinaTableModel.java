@@ -7,6 +7,13 @@ import javax.swing.table.AbstractTableModel;
 
 import com.tia.model.Disciplina;
 
+/**
+ * Classe responsável pelo controle do JTable de disciplinas
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ *
+ */
 public class DisciplinaTableModel extends AbstractTableModel {
 
     private static final long serialVersionUID = 3015180535339312881L;

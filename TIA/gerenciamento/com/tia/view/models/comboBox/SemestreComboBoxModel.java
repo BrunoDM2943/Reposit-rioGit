@@ -5,6 +5,13 @@ import javax.swing.ComboBoxModel;
 
 import com.tia.model.Curso;
 
+/**
+ * Classe responsável pelo controle do comboBox de semestres
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ *
+ */
 @SuppressWarnings("rawtypes")
 public class SemestreComboBoxModel extends AbstractListModel implements ComboBoxModel {
 

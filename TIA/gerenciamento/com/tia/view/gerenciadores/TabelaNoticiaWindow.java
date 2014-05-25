@@ -16,6 +16,12 @@ import com.tia.view.Menu;
 import com.tia.view.cadastros.CadastrarNoticiaWindow;
 import com.tia.view.models.table.NoticiaTableModel;
 
+/**
+ * Janela responsável pela gerenciamento de noticias
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ */
 public class TabelaNoticiaWindow extends JInternalFrame {
     /**
      * 

@@ -12,6 +12,12 @@ import javax.swing.SpringLayout;
 import com.tia.controller.tabela.TabelaDocenteController;
 import com.tia.view.models.table.DocenteTableModel;
 
+/**
+ * Janela responsável pela gerenciamento de docentes
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ */
 public class TabelaDocenteWindow extends JInternalFrame {
 	/**
      * 

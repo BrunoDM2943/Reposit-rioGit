@@ -27,6 +27,12 @@ import com.tia.model.Curso;
 import com.tia.view.models.comboBox.CursoComboBoxModel;
 import com.tia.view.models.comboBox.SemestreComboBoxModel;
 
+/**
+ * Janela responsável pelo cadastro de disciplina
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ */
 public class CadastrarDisciplinaWindow extends JInternalFrame {
 	/**
 	 * 

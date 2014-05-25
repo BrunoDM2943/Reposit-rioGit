@@ -19,6 +19,13 @@ import javax.swing.border.EmptyBorder;
 import com.framework.HtmlGenerator;
 import com.tia.dao.LocalizacaoDataAccess;
 
+/**
+ * Classe responsável pelo janela contendo a localização dos professores
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ *
+ */
 public class LocalizaProfessor extends JFrame {
 
 
@@ -96,6 +103,12 @@ public class LocalizaProfessor extends JFrame {
 		});
 	}
 
+	/**
+	 * Carrega a localização dos professores
+	 * @author Bruno
+	 * @since 25/05/2014
+	 * @version 25/05/2014
+	 */
 	private void carregaLocalizacoes() {
 		LocalizacaoDataAccess dao = new LocalizacaoDataAccess();
 		tableGeral = dao.geraHtmlLocalizacao();

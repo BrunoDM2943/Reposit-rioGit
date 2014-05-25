@@ -26,6 +26,12 @@ import com.tia.model.Status;
 import com.tia.view.models.comboBox.ProfessorComboBoxModel;
 import com.tia.view.models.comboBox.StatusComboBoxModel;
 
+/**
+ * Janela responsável pelo cadastro de localizacao
+ * @author Bruno
+ * @since 25/05/2014
+ * @version 25/05/2014
+ */
 public class CadastrarLocalizacaoWindow extends JInternalFrame {
 
 	private static final long serialVersionUID = 2732219058262028510L;
