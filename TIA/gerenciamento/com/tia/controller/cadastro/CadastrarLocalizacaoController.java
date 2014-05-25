@@ -1,8 +1,8 @@
 package com.tia.controller.cadastro;
 
-import java.util.Hashtable;
-
 import javax.swing.JOptionPane;
+
+import alocacaoDinamica.tabelaEspalhamento.TabelaEspalhamento;
 
 import com.tia.controller.constantes.Persistencia;
 import com.tia.dao.LocalizacaoDataAccess;
@@ -22,13 +22,13 @@ public class CadastrarLocalizacaoController implements ValidarCadastro {
 	StringBuffer msg = new StringBuffer();
 	
 	@Override
-	public boolean validaEntradas(Hashtable<String, Object> parametros) {
+	public boolean validaEntradas(TabelaEspalhamento<String, Object> parametros) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public Persistencia persistir(Hashtable<String, Object> parametros) {
+	public Persistencia persistir(TabelaEspalhamento<String, Object> parametros) {
 		LocalizacaoDataAccess dao = new LocalizacaoDataAccess();
 		Localizacao localizacao = new Localizacao();
 		localizacao.setId_localizacao();

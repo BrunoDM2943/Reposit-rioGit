@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Hashtable;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -18,6 +17,8 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
+
+import alocacaoDinamica.tabelaEspalhamento.TabelaEspalhamento;
 
 import com.jgoodies.forms.factories.FormFactory;
 import com.jgoodies.forms.layout.ColumnSpec;
@@ -93,9 +94,7 @@ public class CadastrarSala extends JInternalFrame {
 	JButton btnGravar = new JButton("Gravar");
 	btnGravar.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-		    
-		    //FIXME HashTable
-		    Hashtable<String, Object> parametros = new Hashtable<>();
+			TabelaEspalhamento<String, Object> parametros = new TabelaEspalhamento<>();
 		   
 			parametros.put("nome", tfNome.getText());
 			parametros.put("andar", spinAndar.getValue());

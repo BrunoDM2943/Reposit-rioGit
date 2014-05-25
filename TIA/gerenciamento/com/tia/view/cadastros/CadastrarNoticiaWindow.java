@@ -3,7 +3,6 @@ package com.tia.view.cadastros;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Hashtable;
 
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
@@ -14,6 +13,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.border.TitledBorder;
+
+import alocacaoDinamica.tabelaEspalhamento.TabelaEspalhamento;
 
 import com.jgoodies.forms.factories.FormFactory;
 import com.jgoodies.forms.layout.ColumnSpec;
@@ -93,7 +94,7 @@ public class CadastrarNoticiaWindow extends JInternalFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				Hashtable<String, Object> parametros = new Hashtable<String, Object>();
+				TabelaEspalhamento<String, Object> parametros = new TabelaEspalhamento<String, Object>();
 				parametros.put("titulo", tfTitulo.getText());
 				parametros.put("noticia", tpNoticia.getText());				
 				CadastrarNoticiaController crtl = new CadastrarNoticiaController();

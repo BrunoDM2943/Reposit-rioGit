@@ -1,8 +1,8 @@
 package com.tia.controller.cadastro;
 
-import java.util.Hashtable;
-
 import javax.swing.JOptionPane;
+
+import alocacaoDinamica.tabelaEspalhamento.TabelaEspalhamento;
 
 import com.tia.controller.constantes.Persistencia;
 import com.tia.dao.StatusDataAccess;
@@ -18,14 +18,14 @@ public class CadastrarStatusController implements ValidarCadastro{
 	StringBuilder msg = new StringBuilder();
 	
 	@Override
-	public boolean validaEntradas(Hashtable<String, Object> parametros) {
+	public boolean validaEntradas(TabelaEspalhamento<String, Object> parametros) {
 		if(parametros.get("status").toString().isEmpty())
 			msg.append("-O Status não pode ser nulo!");
 		return msg.toString().isEmpty();
 	}
 
 	@Override
-	public Persistencia persistir(Hashtable<String, Object> parametros) {
+	public Persistencia persistir(TabelaEspalhamento<String, Object> parametros) {
 		StatusDataAccess dao = new StatusDataAccess();
 		Status status = new Status();
 		status.setId();

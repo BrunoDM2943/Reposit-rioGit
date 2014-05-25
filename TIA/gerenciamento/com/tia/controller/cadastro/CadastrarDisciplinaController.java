@@ -1,8 +1,8 @@
 package com.tia.controller.cadastro;
 
-import java.util.Hashtable;
-
 import javax.swing.JOptionPane;
+
+import alocacaoDinamica.tabelaEspalhamento.TabelaEspalhamento;
 
 import com.tia.controller.constantes.Persistencia;
 import com.tia.dao.DisciplinaDataAccess;
@@ -21,7 +21,7 @@ public class CadastrarDisciplinaController implements ValidarCadastro {
 	StringBuilder msg = new StringBuilder();
 
 	@Override
-	public boolean validaEntradas(Hashtable<String, Object> parametros) {
+	public boolean validaEntradas(TabelaEspalhamento<String, Object> parametros) {
 		if (parametros.get("nome").toString().isEmpty())
 			msg.append("-Nome \n");
 		if (parametros.get("curso").toString().isEmpty())
@@ -30,7 +30,7 @@ public class CadastrarDisciplinaController implements ValidarCadastro {
 	}
 
 	@Override
-	public Persistencia persistir(Hashtable<String, Object> parametros) {
+	public Persistencia persistir(TabelaEspalhamento<String, Object> parametros) {
 		Disciplina disc = new Disciplina();
 		Curso curso = null;
 		DisciplinaDataAccess dao = new DisciplinaDataAccess();

@@ -3,7 +3,6 @@ package com.tia.view.cadastros;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Hashtable;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -14,10 +13,13 @@ import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.SpringLayout;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.TitledBorder;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
+
+import alocacaoDinamica.tabelaEspalhamento.TabelaEspalhamento;
 
 import com.jgoodies.forms.factories.FormFactory;
 import com.jgoodies.forms.layout.ColumnSpec;
@@ -25,8 +27,6 @@ import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.RowSpec;
 import com.tia.controller.cadastro.CadastrarCursoController;
 import com.tia.controller.constantes.Persistencia;
-
-import javax.swing.SpringLayout;
 
 /**
  * Janela responsável por cadastrar um curso
@@ -156,7 +156,7 @@ public class CadastrarCurso extends JInternalFrame {
 	btnGravar.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent e) {
 		
-		    Hashtable<String, Object> parametros = new Hashtable<String, Object>();
+		    TabelaEspalhamento<String, Object> parametros = new TabelaEspalhamento<String, Object>();
 		    CadastrarCursoController crtl = new CadastrarCursoController();
 		    Persistencia resposta  = null;
 		    parametros.put("nome", tfNome.getText());

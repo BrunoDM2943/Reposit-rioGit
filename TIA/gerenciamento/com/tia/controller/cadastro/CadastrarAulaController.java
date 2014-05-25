@@ -3,9 +3,10 @@ package com.tia.controller.cadastro;
 import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Hashtable;
 
 import javax.swing.JOptionPane;
+
+import alocacaoDinamica.tabelaEspalhamento.TabelaEspalhamento;
 
 import com.framework.Dia;
 import com.tia.controller.constantes.Persistencia;
@@ -29,7 +30,7 @@ public class CadastrarAulaController implements ValidarCadastro{
 	Time ini = null;
 	Time fim = null;
 	@Override
-	public boolean validaEntradas(Hashtable<String, Object> parametros) {
+	public boolean validaEntradas(TabelaEspalhamento<String, Object> parametros) {
 		
 		SimpleDateFormat formatador = new SimpleDateFormat("HH:mm");  
 		java.util.Date data;
@@ -66,7 +67,7 @@ public class CadastrarAulaController implements ValidarCadastro{
 	}
 
 	@Override
-	public Persistencia persistir(Hashtable<String, Object> parametros) {
+	public Persistencia persistir(TabelaEspalhamento<String, Object> parametros) {
 		Aula aula = new Aula();
 		aula.setIdAula();
 		aula.setProf((Professor)parametros.get("professor"));

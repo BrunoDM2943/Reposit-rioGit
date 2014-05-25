@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.text.ParseException;
-import java.util.Hashtable;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -18,6 +17,8 @@ import javax.swing.JPanel;
 import javax.swing.SpringLayout;
 import javax.swing.border.TitledBorder;
 import javax.swing.text.MaskFormatter;
+
+import alocacaoDinamica.tabelaEspalhamento.TabelaEspalhamento;
 
 import com.framework.Dia;
 import com.jgoodies.forms.factories.FormFactory;
@@ -177,7 +178,7 @@ public class CadastrarAulaWindow extends JInternalFrame {
 		btnGravar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {				
 				//FIXME HashTable
-				Hashtable<String, Object> parametros = new Hashtable<String, Object>();
+				TabelaEspalhamento<String, Object> parametros = new TabelaEspalhamento<String, Object>();
 				parametros.put("curso", (Curso)cbCurso.getSelectedItem());
 				parametros.put("disciplina", (Disciplina) cbDisciplina.getSelectedItem());
 				parametros.put("professor", (Professor) cbProfessor.getSelectedItem());

@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Hashtable;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -18,6 +17,8 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
+
+import alocacaoDinamica.tabelaEspalhamento.TabelaEspalhamento;
 
 import com.jgoodies.forms.factories.FormFactory;
 import com.jgoodies.forms.layout.ColumnSpec;
@@ -112,7 +113,7 @@ public class CadastrarProfessor extends JInternalFrame {
 	btnCadastrar.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent e) {
 		CadastrarProfessorController crtl = new CadastrarProfessorController();
-		Hashtable<String, Object> parametros = new Hashtable<String, Object>();
+		TabelaEspalhamento<String, Object> parametros = new TabelaEspalhamento<String, Object>();
 		Persistencia resposta = null;
 		parametros.put("nome", tfNome.getText());
 		parametros.put("cursos", jLCursos.getSelectedValuesList());

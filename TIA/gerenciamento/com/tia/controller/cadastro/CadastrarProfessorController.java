@@ -1,11 +1,11 @@
 package com.tia.controller.cadastro;
 
-import java.util.Hashtable;
 import java.util.List;
 
 import javax.swing.JOptionPane;
 
 import alocacaoDinamica.listaEncadeada.ListaEncadeada;
+import alocacaoDinamica.tabelaEspalhamento.TabelaEspalhamento;
 
 import com.tia.controller.constantes.Persistencia;
 import com.tia.dao.CursoDataAccess;
@@ -34,7 +34,7 @@ public class CadastrarProfessorController implements ValidarCadastro {
      * @return True se vazia, false se não
      */
     @Override
-    public boolean validaEntradas(Hashtable<String, Object> parametros) {
+    public boolean validaEntradas(TabelaEspalhamento<String, Object> parametros) {
 	if (parametros.get("nome").toString().isEmpty())
 	    msg.append("-Nome do professor \n");
 	if (parametros.get("cursos").equals(null))
@@ -50,7 +50,7 @@ public class CadastrarProfessorController implements ValidarCadastro {
      */
     @SuppressWarnings("unchecked")
 	@Override
-    public Persistencia persistir(Hashtable<String, Object> parametros) {
+    public Persistencia persistir(TabelaEspalhamento<String, Object> parametros) {
 	ProfessorDataAccess daoProf = new ProfessorDataAccess();
 	DocenteDataAccess daoDocente = new DocenteDataAccess();
 	Professor prof = new Professor();

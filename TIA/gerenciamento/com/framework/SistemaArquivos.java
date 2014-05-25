@@ -114,7 +114,7 @@ public abstract class SistemaArquivos {
 	    curso = (Curso) e;
 	}
 
-	while (fila.hasNext() && novo == true) {
+	while (fila.hasNext() && novo) {
 	    try {
 		reader = new BufferedReader(new FileReader(
 			(File) fila.getInicio()));

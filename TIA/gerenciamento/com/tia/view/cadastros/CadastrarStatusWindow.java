@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Hashtable;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -12,6 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+
+import alocacaoDinamica.tabelaEspalhamento.TabelaEspalhamento;
 
 import com.jgoodies.forms.factories.FormFactory;
 import com.jgoodies.forms.layout.ColumnSpec;
@@ -62,7 +63,7 @@ public class CadastrarStatusWindow extends JDialog {
 					public void actionPerformed(ActionEvent e) {
 						CadastrarStatusController crtl = new CadastrarStatusController();
 						Persistencia response = null;
-						Hashtable<String, Object> parametros = new Hashtable<String, Object>();
+						TabelaEspalhamento<String, Object> parametros = new TabelaEspalhamento<String, Object>();
 						parametros.put("status", tfStatus.getText());
 						if(crtl.validaEntradas(parametros))
 							response = crtl.persistir(parametros);

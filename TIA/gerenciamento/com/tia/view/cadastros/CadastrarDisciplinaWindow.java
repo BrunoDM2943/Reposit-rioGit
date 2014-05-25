@@ -1,6 +1,8 @@
 package com.tia.view.cadastros;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
@@ -13,6 +15,8 @@ import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.border.TitledBorder;
 
+import alocacaoDinamica.tabelaEspalhamento.TabelaEspalhamento;
+
 import com.jgoodies.forms.factories.FormFactory;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
@@ -22,10 +26,6 @@ import com.tia.controller.constantes.Persistencia;
 import com.tia.model.Curso;
 import com.tia.view.models.comboBox.CursoComboBoxModel;
 import com.tia.view.models.comboBox.SemestreComboBoxModel;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.util.Hashtable;
 
 public class CadastrarDisciplinaWindow extends JInternalFrame {
 	/**
@@ -108,8 +108,7 @@ public class CadastrarDisciplinaWindow extends JInternalFrame {
 		JButton btnGravar = new JButton("Gravar");
 		btnGravar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//FIXME hashTable
-				Hashtable<String, Object> parametros = new Hashtable<String, Object>();
+				TabelaEspalhamento<String, Object> parametros = new TabelaEspalhamento<String, Object>();
 				parametros.put("nome", tfNome.getText());
 				parametros.put("curso", cbCurso.getSelectedItem());
 				parametros.put("semestre", cbSemestre.getSelectedItem());

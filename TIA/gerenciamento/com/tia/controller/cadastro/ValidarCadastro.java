@@ -1,6 +1,6 @@
 package com.tia.controller.cadastro;
 
-import java.util.Hashtable;
+import alocacaoDinamica.tabelaEspalhamento.TabelaEspalhamento;
 
 import com.tia.controller.constantes.Persistencia;
 
@@ -18,7 +18,7 @@ public interface ValidarCadastro {
 	 * @return True, se todos os campos foram aprovado; False, se não
 	 * @author bruno.martins
 	 */
-    public boolean validaEntradas(Hashtable<String, Object> parametros);
+    public boolean validaEntradas(TabelaEspalhamento<String, Object> parametros);
 
     /**
      * Chama a classe responsável pelo DAO da entidade
@@ -27,7 +27,7 @@ public interface ValidarCadastro {
      * @author bruno.martins
      * 
      */
-    public Persistencia persistir(Hashtable<String, Object> parametros);
+    public Persistencia persistir(TabelaEspalhamento<String, Object> parametros);
 
     /**
      * Valida a persistência de uma entidade

@@ -1,8 +1,8 @@
 package com.tia.controller.cadastro;
 
-import java.util.Hashtable;
-
 import javax.swing.JOptionPane;
+
+import alocacaoDinamica.tabelaEspalhamento.TabelaEspalhamento;
 
 import com.tia.controller.constantes.Persistencia;
 import com.tia.dao.NoticiaDataAccess;
@@ -19,7 +19,7 @@ public class CadastrarNoticiaController implements ValidarCadastro{
 	StringBuilder msg = new StringBuilder();
 	
 	@Override
-	public boolean validaEntradas(Hashtable<String, Object> parametros) {
+	public boolean validaEntradas(TabelaEspalhamento<String, Object> parametros) {
 		if(parametros.get("titulo").toString().isEmpty())
 			msg.append("-A noticia deve conter um título \n");
 		if(parametros.get("noticia").toString().isEmpty())
@@ -28,7 +28,7 @@ public class CadastrarNoticiaController implements ValidarCadastro{
 	}
 
 	@Override
-	public Persistencia persistir(Hashtable<String, Object> parametros) {
+	public Persistencia persistir(TabelaEspalhamento<String, Object> parametros) {
 		NoticiaDataAccess daoNoticia = new NoticiaDataAccess();
 		Persistencia response = null;
 		Noticia noticia = new Noticia();

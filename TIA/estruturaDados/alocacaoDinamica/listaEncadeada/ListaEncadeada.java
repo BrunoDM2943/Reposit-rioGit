@@ -93,6 +93,25 @@ public class ListaEncadeada<T> implements Iterator<T>{
 		return deletado;
 		
 	}
+	
+	public T remove(T item){
+		if(isEmpty())
+			return null;
+		T deletado = null;
+		No<T> aux = inicio;
+		inicio = null;
+		while(!aux.dado.equals(item)){
+			addFim(aux.dado);
+			aux = aux.prox;
+		}
+		deletado = aux.dado;
+		aux = aux.prox;
+		while(aux != null){
+			addFim(aux.dado);
+			aux = aux.prox;
+		}				
+		return deletado;
+	}
 
 	public void show() {
 		if (isEmpty()) {
@@ -120,7 +139,16 @@ public class ListaEncadeada<T> implements Iterator<T>{
 	    }
 	}
 	
-
+	public T get(T e){
+		if(isEmpty())
+			return null;		
+		No<T> aux = inicio;
+		while(!aux.dado.equals(e)){
+			aux = aux.prox;
+		}
+		return aux.dado;
+	}
+	
 	public Object[] toArray(Class<?> tipo) {	 
 	    Object[] array = null;
 	    if(tipo.getName().equals(Professor.class.getName()))
