@@ -24,7 +24,7 @@ public class HtmlGenerator {
 	 */
 	public String getHtmlFile(String nomeArquivo){
 		StringBuilder html = new StringBuilder();
-		File arquivo = new File(Diretorios.LAYOUT.toString() + "\\" + nomeArquivo + ".html");
+		File arquivo = new File(nomeArquivo + ".html");
 		FileReader fileReader = null;
 		BufferedReader reader = null;
 		

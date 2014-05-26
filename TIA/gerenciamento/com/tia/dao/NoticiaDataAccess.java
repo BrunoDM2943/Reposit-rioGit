@@ -11,6 +11,7 @@ import java.io.IOException;
 import alocacaoDinamica.listaEncadeada.ListaEncadeada;
 
 import com.framework.Diretorios;
+import com.framework.HtmlGenerator;
 import com.tia.controller.constantes.Persistencia;
 import com.tia.model.Noticia;
 
@@ -151,6 +152,48 @@ public class NoticiaDataAccess implements DataAccessObject<Noticia> {
 				return false;
 		}
 		return true;
+	}
+	
+	public String geraNoticia(){
+		String path = Diretorios.NOTICIAS.toString();
+		File[] arquivos = new File(path).listFiles();
+		FileReader fileReader;
+		BufferedReader reader;
+		Noticia noticia;
+		ListaEncadeada<Object> lista = new ListaEncadeada<Object>();
+		String txt = "";
+		try{
+		for (File arquivo : arquivos) {
+		
+			if (!arquivo.getName().equalsIgnoreCase("autoIncremento.txt")) {
+				try {
+					fileReader = new FileReader(arquivo);
+					reader = new BufferedReader(fileReader);
+					noticia = new Noticia();
+					noticia.setIdNoticia(Integer.parseInt(reader.readLine()));
+					noticia.setTitulo(reader.readLine());
+					noticia.setTexto(reader.readLine());
+					lista.addFim(noticia);
+					reader.close();
+					fileReader.close();
+				} catch (FileNotFoundException e) {
+					System.err.println(e.getMessage());
+					e.printStackTrace();
+				} catch (NumberFormatException e) {
+					System.err.println(e.getMessage());
+					e.printStackTrace();
+				} catch (IOException e) {
+					System.err.println(e.getMessage());
+					e.printStackTrace();
+				}
+			}
+		}
+		HtmlGenerator generator =  new HtmlGenerator();
+		txt = generator.gerarHtml(lista);
+		}catch(NullPointerException e){
+			return null;
+		}
+		return txt;
 	}
 	
 	

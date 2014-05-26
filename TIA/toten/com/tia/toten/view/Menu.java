@@ -8,8 +8,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.tia.dao.NoticiaDataAccess;
+import javax.swing.border.TitledBorder;
+import javax.swing.UIManager;
 
 /**
  * Classe responsável pelo menu do TIA - Terminal
@@ -59,5 +64,15 @@ public class Menu extends JFrame {
 		btnOndeEstaMeu.setFont(new Font("SansSerif", Font.PLAIN, 17));
 		btnOndeEstaMeu.setBounds(10, 20, 246, 43);
 		contentPane.add(btnOndeEstaMeu);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new TitledBorder(UIManager.getBorder("CheckBoxMenuItem.border"), "Not\u00EDcias", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		panel.setBounds(487, 25, 246, 377);
+		contentPane.add(panel);
+		
+		JLabel lblLblnoticias = new JLabel("lblNoticias");
+		panel.add(lblLblnoticias);
+		NoticiaDataAccess dao = new NoticiaDataAccess();
+		lblLblnoticias.setText(dao.geraNoticia());
 	}
 }
